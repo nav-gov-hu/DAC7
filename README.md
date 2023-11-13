@@ -1,4 +1,4 @@
-**AutomaticExchangeofInformation**
+**AutomaticExchangeofInformation DAC 7**
 
 Üdvözöljük a Digitális üzleti platformok számára előírt adatszolgáltatási kötelezettség (DAC7) publikus tárhelyén!
 
