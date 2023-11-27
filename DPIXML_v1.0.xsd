@@ -232,10 +232,8 @@
 						<xsd:extension base="stf:StringMin1Max200_Type">
 							<xsd:attribute name="xnlNameType" type="stf:StringMin1Max200_Type">
 								<xsd:annotation>
-									<xsd:documentation xml:lang="hu">Ez jelzi az utónév típusát. Pl.: keresztnév, apja neve, stb. Egyes országokban az utónév lehet maga a családnév. Ezzel az attribútummal lehet pontosítani ennek a névelemnek a típusát.
-									</xsd:documentation>
-									<xsd:documentation xml:lang="en">Defines the name type of FirstName. Example: Given Name, Forename, Christian Name, Father's Name, etc. In some countries, FirstName could be a Family Name or a SurName. Use this attribute to define the type for this name.
-									</xsd:documentation>
+									<xsd:documentation xml:lang="hu">Ez jelzi az utónév típusát. Pl.: keresztnév, apja neve, stb. Egyes országokban az utónév lehet maga a családnév. Ezzel az attribútummal lehet pontosítani ennek a névelemnek a típusát.</xsd:documentation>
+									<xsd:documentation xml:lang="en">Defines the name type of FirstName. Example: Given Name, Forename, Christian Name, Father's Name, etc. In some countries, FirstName could be a Family Name or a Surname. Use this attribute to define the type for this name.</xsd:documentation>
 								</xsd:annotation>
 							</xsd:attribute>
 						</xsd:extension>
@@ -288,10 +286,8 @@
 						<xsd:extension base="stf:StringMin1Max200_Type">
 							<xsd:attribute name="xnlNameType" type="stf:StringMin1Max200_Type">
 								<xsd:annotation>
-									<xsd:documentation xml:lang="hu">Ez pontosítja ennek a névelemnek a típusát. Pl.: vezetéknév, családnév, apja neve, anyja neve, stb. Egyes országokban az utónevet vagy keresztnevet használják családnévként.
-									</xsd:documentation>
-									<xsd:documentation xml:lang="en">Defines the name type of LastName. Example: Family name, Sur Name, Father's name, Mother's Name, etc. In some countries, LastName could be the given name or first name.
-									</xsd:documentation>
+									<xsd:documentation xml:lang="hu">Ez pontosítja ennek a névelemnek a típusát. Pl.: vezetéknév, családnév, apja neve, anyja neve, stb. Egyes országokban az utónevet vagy keresztnevet használják családnévként.</xsd:documentation>
+									<xsd:documentation xml:lang="en">Defines the name type of LastName. Example: Family name, Surname, Father's name, Mother's Name, etc. In some countries, LastName could be the given name or first name.</xsd:documentation>
 								</xsd:annotation>
 							</xsd:attribute>
 						</xsd:extension>
@@ -796,7 +792,7 @@
 		</xsd:complexContent>
 	</xsd:complexType>
 	<!--  -->
-	<!--Pénzforgalmi jelzőszám az Identity típuson belül / Financial Identifer for Identity-->
+	<!--Pénzforgalmi jelzőszám az Identity típuson belül / Financial Identifier for Identity-->
 	<xsd:complexType name="FinancialIdentifier_Type">
 		<xsd:annotation>
 			<xsd:documentation xml:lang="hu">Ez az elem tartalmazza a Pénzforgalmi jelzőszámot, amely az Ellenérték kifizetésére, illetve jóváírására szolgáló bankszámlának vagy egyéb hasonló pénzforgalmi számlának a Platformüzemeltető rendelkezésére álló egyedi azonosító száma vagy hivatkozási száma. Nem kell feltüntetni, ha a Jelentendő értékesítő az Aktv. 5. melléklet II/D. pont alapján meghatározott illetősége szerinti tagállam hatáskörrel rendelkező hatósága közzétette, hogy nem szándékozik a Pénzforgalmi jelzőszámot az Értékesítő azonosítása céljából felhasználni.</xsd:documentation>
@@ -824,7 +820,7 @@
 		</xsd:sequence>
 	</xsd:complexType>
 	<!--  -->
-	<!--Azonosító típus a Pénzforgalmi jelzőszámhoz / Identifer for Financial Identifier-->
+	<!--Azonosító típus a Pénzforgalmi jelzőszámhoz / Identifier for Financial Identifier-->
 	<xsd:complexType name="Identifier_Type">
 		<xsd:annotation>
 			<xsd:documentation xml:lang="hu">Ez a típus a Jelentendő értékesítőhöz tartozó Pénzforgalmi jelzőszám azonosítóját tartalmazza. A Pénzforgalmi jelzőszám tartalmazhatja az IBAN-számot, a bankazonosítót és a számlaszámot, valamint bármely más olyan fizetési számla azonosítót, amelyet az Adatszolgáltatásra kötelezett platformüzemeltető az Ellenérték átutalásakor használt a Jelentendő értékesítőhöz kapcsolódóan.</xsd:documentation>
@@ -846,7 +842,7 @@
 	<xsd:complexType name="OtherActivities_Type">
 		<xsd:annotation>
 			<xsd:documentation xml:lang="hu">Ez a típus az ingatlan bérbeadásán kívüli egyéb Érintett tevékenységekhez kapcsolódóan tartalmazza az Ellenértékkel, Érintett tevékenységek számával, levont vagy felszámított díjjakkal, jutalékkal, adóval kapcsolatos információkat.</xsd:documentation>
-			<xsd:documentation xml:lang="en">This type contains information about the Consideration, number of Relevant Activites, fees, commissions or taxes withheld or charged in connection Relevant Activities other than the rental of immovable property.</xsd:documentation>
+			<xsd:documentation xml:lang="en">This type contains information about the Consideration, number of Relevant Activities, fees, commissions or taxes withheld or charged in connection Relevant Activities other than the rental of immovable property.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="Consideration" type="dpi:ConsiderationType">
