@@ -12,7 +12,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 		<xsd:restriction base="xsd:string">
 			<xsd:enumeration value="AF">
 				<xsd:annotation>
-					<xsd:documentation>AFGHANISTAN=Afganisztá</xsd:documentation>
+					<xsd:documentation>AFGHANISTAN=Afganisztán</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="AX">
@@ -687,8 +687,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="MV">
 				<xsd:annotation>
-					<xsd:documentation>MALDIVES=Maldív-szigetek
-</xsd:documentation>
+					<xsd:documentation>MALDIVES=Maldív-szigetek</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="ML">
@@ -978,7 +977,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="ST">
 				<xsd:annotation>
-					<xsd:documentation>SAO TOME AND PRINCIPE=Sao Tomé és Príncipe</xsd:documentation>
+					<xsd:documentation>SAO TOME AND PRINCIPE=São Tomé és Príncipe</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="SA">
@@ -1123,7 +1122,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="TG">
 				<xsd:annotation>
-					<xsd:documentation>TOGO=Togó</xsd:documentation>
+					<xsd:documentation>TOGO=Togo</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="TK">
@@ -1218,7 +1217,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="VN">
 				<xsd:annotation>
-					<xsd:documentation>VIET NAM=Vietnam</xsd:documentation>
+					<xsd:documentation>VIET NAM=Vietnám</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="VG">
@@ -1263,12 +1262,12 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="X5">
 				<xsd:annotation>
-					<xsd:documentation>STATELESS</xsd:documentation>
+					<xsd:documentation>STATELESS=hontalan személy</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="XX">
 				<xsd:annotation>
-					<xsd:documentation>OTHER COUNTRY</xsd:documentation>
+					<xsd:documentation>OTHER COUNTRY=más ország</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 		</xsd:restriction>
@@ -1976,12 +1975,12 @@ A DPI séma az ISO deviza szabványt használja és az ISO 4217 alpha 3 listán 
 			</xsd:enumeration>
 			<xsd:enumeration value="STD">
 				<xsd:annotation>
-					<xsd:documentation>Historic use: Dobra: SAO TOME AND PRINCIPE=Sao Tomé és Príncipe-i dobra (történelmi használat)</xsd:documentation>
+					<xsd:documentation>Historic use: Dobra: SAO TOME AND PRINCIPE=São Tomé és Príncipe-i dobra (történelmi használat)</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="STN">
 				<xsd:annotation>
-					<xsd:documentation>Dobra: SAO TOME AND PRINCIPE=Sao Tomé és Príncipe-i dobra</xsd:documentation>
+					<xsd:documentation>Dobra: SAO TOME AND PRINCIPE=São Tomé és Príncipe-i dobra</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="SVC">
