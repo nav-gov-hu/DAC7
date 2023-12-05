@@ -1,0 +1,3194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:iso="urn:oecd:ties:isodpitypes:v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:oecd:ties:isodpitypes:v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<!--  ISO 3166 alpha 2 Country Code / országkódok
+
+A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán alapszik. Ennek a listának a használata technikai okokból az OECD általi nemzetközi sémához igazodik, és nem jelent semmilyen hivatalos állásfoglalást az egyes joghatóságok jogi státuszát illetően.
+    -->
+	<xsd:simpleType name="CountryCode_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">ISO-3166 Alpha 2 országkódok</xsd:documentation>
+			<xsd:documentation xml:lang="en">ISO-3166 Alpha 2 country codes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AF">
+				<xsd:annotation>
+					<xsd:documentation>AFGHANISTAN=Afganisztán</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AX">
+				<xsd:annotation>
+					<xsd:documentation>ALAND ISLANDS=Aland szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AL">
+				<xsd:annotation>
+					<xsd:documentation>ALBANIA=Albánia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DZ">
+				<xsd:annotation>
+					<xsd:documentation>ALGERIA=Algéria</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AS">
+				<xsd:annotation>
+					<xsd:documentation>AMERICAN SAMOA=Amerikai Szamoa</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AD">
+				<xsd:annotation>
+					<xsd:documentation>ANDORRA=Andorra</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AO">
+				<xsd:annotation>
+					<xsd:documentation>ANGOLA=Angola</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AI">
+				<xsd:annotation>
+					<xsd:documentation>ANGUILLA=Anguilla</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AQ">
+				<xsd:annotation>
+					<xsd:documentation>ANTARCTICA=Antarktisz</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AG">
+				<xsd:annotation>
+					<xsd:documentation>ANTIGUA AND BARBUDA=Antigua és Barbuda</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AR">
+				<xsd:annotation>
+					<xsd:documentation>ARGENTINA=Argentína</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AM">
+				<xsd:annotation>
+					<xsd:documentation>ARMENIA=Örményország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AW">
+				<xsd:annotation>
+					<xsd:documentation>ARUBA=Aruba</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AU">
+				<xsd:annotation>
+					<xsd:documentation>AUSTRALIA=Ausztrália</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AT">
+				<xsd:annotation>
+					<xsd:documentation>AUSTRIA=Ausztria</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AZ">
+				<xsd:annotation>
+					<xsd:documentation>AZERBAIJAN=Azerbajdzsán</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BS">
+				<xsd:annotation>
+					<xsd:documentation>BAHAMAS=Bahama-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BH">
+				<xsd:annotation>
+					<xsd:documentation>BAHRAIN=Bahrein</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BD">
+				<xsd:annotation>
+					<xsd:documentation>BANGLADESH=Banglades</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BB">
+				<xsd:annotation>
+					<xsd:documentation>BARBADOS=Barbados</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BY">
+				<xsd:annotation>
+					<xsd:documentation>BELARUS=Belarusz</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BE">
+				<xsd:annotation>
+					<xsd:documentation>BELGIUM=Belgium</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BZ">
+				<xsd:annotation>
+					<xsd:documentation>BELIZE=Belize</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BJ">
+				<xsd:annotation>
+					<xsd:documentation>BENIN=Benin</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BM">
+				<xsd:annotation>
+					<xsd:documentation>BERMUDA=Bermuda</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BT">
+				<xsd:annotation>
+					<xsd:documentation>BHUTAN=Bhután</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BO">
+				<xsd:annotation>
+					<xsd:documentation>BOLIVIA, PLURINATIONAL STATE OF=Többnemzetiségű Bolíviai Állam</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BQ">
+				<xsd:annotation>
+					<xsd:documentation>BONAIRE, SINT EUSTATIUS AND SABA=Bonaire, Sint Eustatius és Saba</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BA">
+				<xsd:annotation>
+					<xsd:documentation>BOSNIA AND HERZEGOVINA=Bosznia-Hercegovina</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BW">
+				<xsd:annotation>
+					<xsd:documentation>BOTSWANA=Botswana</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BV">
+				<xsd:annotation>
+					<xsd:documentation>BOUVET ISLAND=Bouvet-sziget</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BR">
+				<xsd:annotation>
+					<xsd:documentation>BRAZIL=Brazília</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IO">
+				<xsd:annotation>
+					<xsd:documentation>BRITISH INDIAN OCEAN TERRITORY=Brit Indiai-óceáni Terület</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BN">
+				<xsd:annotation>
+					<xsd:documentation>BRUNEI DARUSSALAM=Brunei Darussalam Állam</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BG">
+				<xsd:annotation>
+					<xsd:documentation>BULGARIA=Bulgária</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BF">
+				<xsd:annotation>
+					<xsd:documentation>BURKINA FASO=Burkina Faso</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BI">
+				<xsd:annotation>
+					<xsd:documentation>BURUNDI=Burundi</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KH">
+				<xsd:annotation>
+					<xsd:documentation>CAMBODIA=Kambodzsa</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CM">
+				<xsd:annotation>
+					<xsd:documentation>CAMEROON=Kamerun</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CA">
+				<xsd:annotation>
+					<xsd:documentation>CANADA=Kanada</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CV">
+				<xsd:annotation>
+					<xsd:documentation>CABO VERDE=Zöld-foki-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KY">
+				<xsd:annotation>
+					<xsd:documentation>CAYMAN ISLANDS=Kajmán-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CF">
+				<xsd:annotation>
+					<xsd:documentation>CENTRAL AFRICAN REPUBLIC=Közép-afrikai Köztársaság</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TD">
+				<xsd:annotation>
+					<xsd:documentation>CHAD=Csád</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CL">
+				<xsd:annotation>
+					<xsd:documentation>CHILE=Chile</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CN">
+				<xsd:annotation>
+					<xsd:documentation>CHINA=Kína</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CX">
+				<xsd:annotation>
+					<xsd:documentation>CHRISTMAS ISLAND=Karácsony-sziget</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CC">
+				<xsd:annotation>
+					<xsd:documentation>COCOS (KEELING) ISLANDS=Kókusz-szigetek (vagy Keeling-szigetek)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CO">
+				<xsd:annotation>
+					<xsd:documentation>COLOMBIA=Kolumbia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KM">
+				<xsd:annotation>
+					<xsd:documentation>COMOROS=Comore-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CG">
+				<xsd:annotation>
+					<xsd:documentation>CONGO=Kongó</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CD">
+				<xsd:annotation>
+					<xsd:documentation>CONGO, THE DEMOCRATIC REPUBLIC OF THE=Kongói Demokratikus Köztársaság</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CK">
+				<xsd:annotation>
+					<xsd:documentation>COOK ISLANDS=Cook-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CR">
+				<xsd:annotation>
+					<xsd:documentation>COSTA RICA=Costa Rica</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CI">
+				<xsd:annotation>
+					<xsd:documentation>COTE D'IVOIRE=Elefántcsontpart</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HR">
+				<xsd:annotation>
+					<xsd:documentation>CROATIA=Horvátország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CU">
+				<xsd:annotation>
+					<xsd:documentation>CUBA=Kuba</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CW">
+				<xsd:annotation>
+					<xsd:documentation>CURACAO=Curaçao</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CY">
+				<xsd:annotation>
+					<xsd:documentation>CYPRUS=Ciprus</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CZ">
+				<xsd:annotation>
+					<xsd:documentation>CZECHIA=Csehország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DK">
+				<xsd:annotation>
+					<xsd:documentation>DENMARK=Dánia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DJ">
+				<xsd:annotation>
+					<xsd:documentation>DJIBOUTI=Dzsibuti</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DM">
+				<xsd:annotation>
+					<xsd:documentation>DOMINICA=Dominika</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DO">
+				<xsd:annotation>
+					<xsd:documentation>DOMINICAN REPUBLIC=Dominikai Köztársaság</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EC">
+				<xsd:annotation>
+					<xsd:documentation>ECUADOR=Ecuador</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EG">
+				<xsd:annotation>
+					<xsd:documentation>EGYPT=Egyiptom</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SV">
+				<xsd:annotation>
+					<xsd:documentation>EL SALVADOR=Salvador</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GQ">
+				<xsd:annotation>
+					<xsd:documentation>EQUATORIAL GUINEA=Egyenlítői-Guinea</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ER">
+				<xsd:annotation>
+					<xsd:documentation>ERITREA=Eritrea</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EE">
+				<xsd:annotation>
+					<xsd:documentation>ESTONIA=Észtország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ET">
+				<xsd:annotation>
+					<xsd:documentation>ETHIOPIA=Etiópia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FK">
+				<xsd:annotation>
+					<xsd:documentation>FALKLAND ISLANDS (MALVINAS)=Falkland-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FO">
+				<xsd:annotation>
+					<xsd:documentation>FAROE ISLANDS=Feröer szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FJ">
+				<xsd:annotation>
+					<xsd:documentation>FIJI=Fidzsi-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FI">
+				<xsd:annotation>
+					<xsd:documentation>FINLAND=Finnország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FR">
+				<xsd:annotation>
+					<xsd:documentation>FRANCE=Franciaország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GF">
+				<xsd:annotation>
+					<xsd:documentation>FRENCH GUIANA=Francia Guyana</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PF">
+				<xsd:annotation>
+					<xsd:documentation>FRENCH POLYNESIA=Francia Polinézia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TF">
+				<xsd:annotation>
+					<xsd:documentation>FRENCH SOUTHERN TERRITORIES=Francia Déli Területek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GA">
+				<xsd:annotation>
+					<xsd:documentation>GABON=Gabon</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GM">
+				<xsd:annotation>
+					<xsd:documentation>GAMBIA=Gambia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GE">
+				<xsd:annotation>
+					<xsd:documentation>GEORGIA=Georgia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DE">
+				<xsd:annotation>
+					<xsd:documentation>GERMANY=Németország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GH">
+				<xsd:annotation>
+					<xsd:documentation>GHANA=Ghána</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GI">
+				<xsd:annotation>
+					<xsd:documentation>GIBRALTAR=Gibraltár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GR">
+				<xsd:annotation>
+					<xsd:documentation>GREECE=Görögország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GL">
+				<xsd:annotation>
+					<xsd:documentation>GREENLAND=Grönland</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GD">
+				<xsd:annotation>
+					<xsd:documentation>GRENADA=Grenada</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GP">
+				<xsd:annotation>
+					<xsd:documentation>GUADELOUPE=Guadeloupe</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GU">
+				<xsd:annotation>
+					<xsd:documentation>GUAM=Guam</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GT">
+				<xsd:annotation>
+					<xsd:documentation>GUATEMALA=Guatemala</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GG">
+				<xsd:annotation>
+					<xsd:documentation>GUERNSEY=Guernsey</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GN">
+				<xsd:annotation>
+					<xsd:documentation>GUINEA=Guinea</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GW">
+				<xsd:annotation>
+					<xsd:documentation>GUINEA-BISSAU=Bissau-Guinea</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GY">
+				<xsd:annotation>
+					<xsd:documentation>GUYANA=Guyana</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HT">
+				<xsd:annotation>
+					<xsd:documentation>HAITI=Haiti</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HM">
+				<xsd:annotation>
+					<xsd:documentation>HEARD ISLAND AND MCDONALD ISLANDS=Heard-sziget és McDonald-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VA">
+				<xsd:annotation>
+					<xsd:documentation>HOLY SEE (VATICAN CITY STATE)=Apostoli Szentszék (Vatikánvárosi Állam)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HN">
+				<xsd:annotation>
+					<xsd:documentation>HONDURAS=Honduras</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HK">
+				<xsd:annotation>
+					<xsd:documentation>HONG KONG=Hongkong</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HU">
+				<xsd:annotation>
+					<xsd:documentation>HUNGARY=Magyarország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IS">
+				<xsd:annotation>
+					<xsd:documentation>ICELAND=Izland</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IN">
+				<xsd:annotation>
+					<xsd:documentation>INDIA=India</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ID">
+				<xsd:annotation>
+					<xsd:documentation>INDONESIA=Indonézia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IR">
+				<xsd:annotation>
+					<xsd:documentation>IRAN, ISLAMIC REPUBLIC OF=Iráni Iszlám Köztársaság</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IQ">
+				<xsd:annotation>
+					<xsd:documentation>IRAQ=Irak</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IE">
+				<xsd:annotation>
+					<xsd:documentation>IRELAND=Írország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IM">
+				<xsd:annotation>
+					<xsd:documentation>ISLE OF MAN=Man-sziget</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IL">
+				<xsd:annotation>
+					<xsd:documentation>ISRAEL=Izrael</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IT">
+				<xsd:annotation>
+					<xsd:documentation>ITALY=Olaszország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="JM">
+				<xsd:annotation>
+					<xsd:documentation>JAMAICA=Jamaica</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="JP">
+				<xsd:annotation>
+					<xsd:documentation>JAPAN=Japán</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="JE">
+				<xsd:annotation>
+					<xsd:documentation>JERSEY=Jersey</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="JO">
+				<xsd:annotation>
+					<xsd:documentation>JORDAN=Jordánia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KZ">
+				<xsd:annotation>
+					<xsd:documentation>KAZAKHSTAN=Kazahsztán</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KE">
+				<xsd:annotation>
+					<xsd:documentation>KENYA=Kenya</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KI">
+				<xsd:annotation>
+					<xsd:documentation>KIRIBATI=Kiribati</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KP">
+				<xsd:annotation>
+					<xsd:documentation>KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF=Koreai Népi Demokratikus Köztársaság</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KR">
+				<xsd:annotation>
+					<xsd:documentation>KOREA, REPUBLIC OF=Koreai Köztársaság</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KW">
+				<xsd:annotation>
+					<xsd:documentation>KUWAIT=Kuvait</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KG">
+				<xsd:annotation>
+					<xsd:documentation>KYRGYZSTAN=Kirgiz Köztársaság</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LA">
+				<xsd:annotation>
+					<xsd:documentation>LAO PEOPLE'S DEMOCRATIC REPUBLIC=Laoszi Népi Demokratikus Köztársaság</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LV">
+				<xsd:annotation>
+					<xsd:documentation>LATVIA=Lettország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LB">
+				<xsd:annotation>
+					<xsd:documentation>LEBANON=Libanon</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LS">
+				<xsd:annotation>
+					<xsd:documentation>LESOTHO=Lesotho</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LR">
+				<xsd:annotation>
+					<xsd:documentation>LIBERIA=Libéria</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LY">
+				<xsd:annotation>
+					<xsd:documentation>LIBYA=Líbia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LI">
+				<xsd:annotation>
+					<xsd:documentation>LIECHTENSTEIN=Liechtenstein</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LT">
+				<xsd:annotation>
+					<xsd:documentation>LITHUANIA=Litvánia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LU">
+				<xsd:annotation>
+					<xsd:documentation>LUXEMBOURG=Luxemburg</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MO">
+				<xsd:annotation>
+					<xsd:documentation>MACAO=Makaó</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MK">
+				<xsd:annotation>
+					<xsd:documentation>NORTH MACEDONIA=Észak-Macedónia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MG">
+				<xsd:annotation>
+					<xsd:documentation>MADAGASCAR=Madagaszkár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MW">
+				<xsd:annotation>
+					<xsd:documentation>MALAWI=Malawi</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MY">
+				<xsd:annotation>
+					<xsd:documentation>MALAYSIA=Malajzia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MV">
+				<xsd:annotation>
+					<xsd:documentation>MALDIVES=Maldív-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ML">
+				<xsd:annotation>
+					<xsd:documentation>MALI=Mali</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MT">
+				<xsd:annotation>
+					<xsd:documentation>MALTA=Málta</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MH">
+				<xsd:annotation>
+					<xsd:documentation>MARSHALL ISLANDS=Marshall-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MQ">
+				<xsd:annotation>
+					<xsd:documentation>MARTINIQUE=Martinique</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MR">
+				<xsd:annotation>
+					<xsd:documentation>MAURITANIA=Mauritánia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MU">
+				<xsd:annotation>
+					<xsd:documentation>MAURITIUS=Mauritius</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="YT">
+				<xsd:annotation>
+					<xsd:documentation>MAYOTTE=Mayotte</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MX">
+				<xsd:annotation>
+					<xsd:documentation>MEXICO=Mexikó</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FM">
+				<xsd:annotation>
+					<xsd:documentation>MICRONESIA, FEDERATED STATES OF=Mikronéziai Szövetségi Államok</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MD">
+				<xsd:annotation>
+					<xsd:documentation>MOLDOVA, REPUBLIC OF=Moldova</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MC">
+				<xsd:annotation>
+					<xsd:documentation>MONACO=Monaco</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MN">
+				<xsd:annotation>
+					<xsd:documentation>MONGOLIA=Mongólia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ME">
+				<xsd:annotation>
+					<xsd:documentation>MONTENEGRO=Montenegró</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MS">
+				<xsd:annotation>
+					<xsd:documentation>MONTSERRAT=Montserrat</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MA">
+				<xsd:annotation>
+					<xsd:documentation>MOROCCO=Marokkó</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MZ">
+				<xsd:annotation>
+					<xsd:documentation>MOZAMBIQUE=Mozambik</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MM">
+				<xsd:annotation>
+					<xsd:documentation>MYANMAR=Mianmar</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NA">
+				<xsd:annotation>
+					<xsd:documentation>NAMIBIA=Namíbia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NR">
+				<xsd:annotation>
+					<xsd:documentation>NAURU=Nauru</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NP">
+				<xsd:annotation>
+					<xsd:documentation>NEPAL=Nepál</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NL">
+				<xsd:annotation>
+					<xsd:documentation>NETHERLANDS=Hollandia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NC">
+				<xsd:annotation>
+					<xsd:documentation>NEW CALEDONIA=Új-Kaledónia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NZ">
+				<xsd:annotation>
+					<xsd:documentation>NEW ZEALAND=Új-Zéland</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NI">
+				<xsd:annotation>
+					<xsd:documentation>NICARAGUA=Nicaragua</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NE">
+				<xsd:annotation>
+					<xsd:documentation>NIGER=Niger</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NG">
+				<xsd:annotation>
+					<xsd:documentation>NIGERIA=Nigéria</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NU">
+				<xsd:annotation>
+					<xsd:documentation>NIUE=Niue</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NF">
+				<xsd:annotation>
+					<xsd:documentation>NORFOLK ISLAND=Norfolk-sziget</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MP">
+				<xsd:annotation>
+					<xsd:documentation>NORTHERN MARIANA ISLANDS=Északi-Mariana-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NO">
+				<xsd:annotation>
+					<xsd:documentation>NORWAY=Norvégia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="OM">
+				<xsd:annotation>
+					<xsd:documentation>OMAN=Omán</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PK">
+				<xsd:annotation>
+					<xsd:documentation>PAKISTAN=Pakisztán</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PW">
+				<xsd:annotation>
+					<xsd:documentation>PALAU=Palau</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PS">
+				<xsd:annotation>
+					<xsd:documentation>PALESTINE, STATE OF=Palesztina</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PA">
+				<xsd:annotation>
+					<xsd:documentation>PANAMA=Panama</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PG">
+				<xsd:annotation>
+					<xsd:documentation>PAPUA NEW GUINEA=Pápua Új-Guinea</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PY">
+				<xsd:annotation>
+					<xsd:documentation>PARAGUAY=Paraguay</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PE">
+				<xsd:annotation>
+					<xsd:documentation>PERU=Peru</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PH">
+				<xsd:annotation>
+					<xsd:documentation>PHILIPPINES=Fülöp-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PN">
+				<xsd:annotation>
+					<xsd:documentation>PITCAIRN=Pitcairn-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PL">
+				<xsd:annotation>
+					<xsd:documentation>POLAND=Lengyelország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PT">
+				<xsd:annotation>
+					<xsd:documentation>PORTUGAL=Portugália</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PR">
+				<xsd:annotation>
+					<xsd:documentation>PUERTO RICO=Puerto Rico</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="QA">
+				<xsd:annotation>
+					<xsd:documentation>QATAR=Katar</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RE">
+				<xsd:annotation>
+					<xsd:documentation>REUNION=Réunion</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RO">
+				<xsd:annotation>
+					<xsd:documentation>ROMANIA=Románia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RU">
+				<xsd:annotation>
+					<xsd:documentation>RUSSIAN FEDERATION=Orosz Föderáció</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RW">
+				<xsd:annotation>
+					<xsd:documentation>RWANDA=Ruanda</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BL">
+				<xsd:annotation>
+					<xsd:documentation>SAINT BARTHELEMY=Saint-Barthélémy</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SH">
+				<xsd:annotation>
+					<xsd:documentation>SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA=Szent Ilona, Ascension-sziget, Tristan da Cunha</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KN">
+				<xsd:annotation>
+					<xsd:documentation>SAINT KITTS AND NEVIS=Saint Kitts és Nevis</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LC">
+				<xsd:annotation>
+					<xsd:documentation>SAINT LUCIA=Saint Lucia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MF">
+				<xsd:annotation>
+					<xsd:documentation>SAINT MARTIN (FRENCH PART)=Szent Márton-sziget (francia rész)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PM">
+				<xsd:annotation>
+					<xsd:documentation>SAINT PIERRE AND MIQUELON=Saint-Pierre és Miquelon</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VC">
+				<xsd:annotation>
+					<xsd:documentation>SAINT VINCENT AND THE GRENADINES=Saint Vincent és Grenadine-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WS">
+				<xsd:annotation>
+					<xsd:documentation>SAMOA=Szamoa</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SM">
+				<xsd:annotation>
+					<xsd:documentation>SAN MARINO=San Marino</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ST">
+				<xsd:annotation>
+					<xsd:documentation>SAO TOME AND PRINCIPE=São Tomé és Príncipe</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SA">
+				<xsd:annotation>
+					<xsd:documentation>SAUDI ARABIA=Szaúd-Arábia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SN">
+				<xsd:annotation>
+					<xsd:documentation>SENEGAL=Szenegál</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RS">
+				<xsd:annotation>
+					<xsd:documentation>SERBIA=Szerb Köztársaság</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SC">
+				<xsd:annotation>
+					<xsd:documentation>SEYCHELLES=Seychelle-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SL">
+				<xsd:annotation>
+					<xsd:documentation>SIERRA LEONE=Sierra Leone</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SG">
+				<xsd:annotation>
+					<xsd:documentation>SINGAPORE=Szingapúr</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SX">
+				<xsd:annotation>
+					<xsd:documentation>SINT MAARTEN (DUTCH PART)=Saint-Martin (holland rész)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SK">
+				<xsd:annotation>
+					<xsd:documentation>SLOVAKIA=Szlovákia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SI">
+				<xsd:annotation>
+					<xsd:documentation>SLOVENIA=Szlovénia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SB">
+				<xsd:annotation>
+					<xsd:documentation>SOLOMON ISLANDS=Salamon-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SO">
+				<xsd:annotation>
+					<xsd:documentation>SOMALIA=Szomália</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ZA">
+				<xsd:annotation>
+					<xsd:documentation>SOUTH AFRICA=Dél-Afrika</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GS">
+				<xsd:annotation>
+					<xsd:documentation>SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS=Dél-Georgia és Déli-Sandwich-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SS">
+				<xsd:annotation>
+					<xsd:documentation>SOUTH SUDAN=Dél-Szudán</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ES">
+				<xsd:annotation>
+					<xsd:documentation>SPAIN=Spanyolország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LK">
+				<xsd:annotation>
+					<xsd:documentation>SRI LANKA=Srí Lanka</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SD">
+				<xsd:annotation>
+					<xsd:documentation>SUDAN=Szudán</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SR">
+				<xsd:annotation>
+					<xsd:documentation>SURINAME=Suriname</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SJ">
+				<xsd:annotation>
+					<xsd:documentation>SVALBARD AND JAN MAYEN=Svalbard és Jan Mayen</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SZ">
+				<xsd:annotation>
+					<xsd:documentation>ESWATINI=Szváziföld</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SE">
+				<xsd:annotation>
+					<xsd:documentation>SWEDEN=Svédország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CH">
+				<xsd:annotation>
+					<xsd:documentation>SWITZERLAND=Svájc</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SY">
+				<xsd:annotation>
+					<xsd:documentation>SYRIAN ARAB REPUBLIC=Szíriai Arab Köztársaság</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TW">
+				<xsd:annotation>
+					<xsd:documentation>TAIWAN, PROVINCE OF CHINA=Tajvan, Kína tartománya</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TJ">
+				<xsd:annotation>
+					<xsd:documentation>TAJIKISTAN=Tádzsikisztán</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TZ">
+				<xsd:annotation>
+					<xsd:documentation>TANZANIA, UNITED REPUBLIC OF=Tanzániai Egyesült Köztársaság</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TH">
+				<xsd:annotation>
+					<xsd:documentation>THAILAND=Thaiföld</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TL">
+				<xsd:annotation>
+					<xsd:documentation>TIMOR-LESTE=Kelet-Timor</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TG">
+				<xsd:annotation>
+					<xsd:documentation>TOGO=Togo</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TK">
+				<xsd:annotation>
+					<xsd:documentation>TOKELAU=Tokelau-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TO">
+				<xsd:annotation>
+					<xsd:documentation>TONGA=Tonga</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TT">
+				<xsd:annotation>
+					<xsd:documentation>TRINIDAD AND TOBAGO=Trinidad és Tobago</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TN">
+				<xsd:annotation>
+					<xsd:documentation>TUNISIA=Tunézia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TR">
+				<xsd:annotation>
+					<xsd:documentation>TURKEY=Törökország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TM">
+				<xsd:annotation>
+					<xsd:documentation>TURKMENISTAN=Türkmenisztán</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TC">
+				<xsd:annotation>
+					<xsd:documentation>TURKS AND CAICOS ISLANDS=Turks- és Caicos-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TV">
+				<xsd:annotation>
+					<xsd:documentation>TUVALU=Tuvalu</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UG">
+				<xsd:annotation>
+					<xsd:documentation>UGANDA=Uganda</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UA">
+				<xsd:annotation>
+					<xsd:documentation>UKRAINE=Ukrajna</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AE">
+				<xsd:annotation>
+					<xsd:documentation>UNITED ARAB EMIRATES=Egyesült Arab Emírségek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GB">
+				<xsd:annotation>
+					<xsd:documentation>UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND=Nagy-Britannia és Észak-Írország Egyesült Királysága</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="US">
+				<xsd:annotation>
+					<xsd:documentation>UNITED STATES=Amerikai Egyesült Államok</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UM">
+				<xsd:annotation>
+					<xsd:documentation>UNITED STATES MINOR OUTLYING ISLANDS=Az Amerikai Egyesült Államok Külső Szigetei</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UY">
+				<xsd:annotation>
+					<xsd:documentation>URUGUAY=Uruguay</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UZ">
+				<xsd:annotation>
+					<xsd:documentation>UZBEKISTAN=Üzbegisztán</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VU">
+				<xsd:annotation>
+					<xsd:documentation>VANUATU=Vanuatu</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VE">
+				<xsd:annotation>
+					<xsd:documentation>VENEZUELA, BOLIVARIAN REPUBLIC OF=Venezuelai Bolivári Köztársaság</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VN">
+				<xsd:annotation>
+					<xsd:documentation>VIET NAM=Vietnám</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VG">
+				<xsd:annotation>
+					<xsd:documentation>VIRGIN ISLANDS, BRITISH=Brit Virgin-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VI">
+				<xsd:annotation>
+					<xsd:documentation>VIRGIN ISLANDS, U.S.=Amerikai Virgin-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WF">
+				<xsd:annotation>
+					<xsd:documentation>WALLIS AND FUTUNA=Wallis- és Futuna-szigetek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EH">
+				<xsd:annotation>
+					<xsd:documentation>WESTERN SAHARA=Nyugat-Szahara</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="YE">
+				<xsd:annotation>
+					<xsd:documentation>YEMEN=Jemen</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ZM">
+				<xsd:annotation>
+					<xsd:documentation>ZAMBIA=Zambia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ZW">
+				<xsd:annotation>
+					<xsd:documentation>ZIMBABWE=Zimbabwe</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XK">
+				<xsd:annotation>
+					<xsd:documentation>KOSOVO=Koszovó</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="X5">
+				<xsd:annotation>
+					<xsd:documentation>STATELESS=hontalan személy</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XX">
+				<xsd:annotation>
+					<xsd:documentation>OTHER COUNTRY=más ország</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--   -->
+	<!--  ISO 4217 alpha 3 Currency Code / devizanem kódok
+
+A DPI séma az ISO deviza szabványt használja és az ISO 4217 alpha 3 listán alapszik. Ennek a listának a használata technikai okokból az OECD általi nemzetközi sémához igazodik, és nem jelent semmilyen hivatalos állásfoglalást az egyes joghatóságok jogi státuszát illetően.
+
+     -->
+	<xsd:simpleType name="currCode_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">
+			Valamely pénzösszeg pénznemének kódját fejezi ki, az ISO 4217 alpha 3 kódlista alapján.
+			</xsd:documentation>
+			<xsd:documentation xml:lang="en">
+			The appropriate currency code from the ISO 4217 three-byte alpha version for the currency in which a monetary amount is expressed. 
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AED">
+				<xsd:annotation>
+					<xsd:documentation>UAE Dirham: UNITED ARAB EMIRATES=Emirátusi dirham</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AFN">
+				<xsd:annotation>
+					<xsd:documentation>Afghani: AFGHANISTAN=Afgán afgáni</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ALL">
+				<xsd:annotation>
+					<xsd:documentation>Lek: ALBANIA=Albán lek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AMD">
+				<xsd:annotation>
+					<xsd:documentation>Armenian Dram: ARMENIA=Örmény dram</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ANG">
+				<xsd:annotation>
+					<xsd:documentation>Netherlands Antillean Guilder: CURACAO; SINT MAARTEN (DUTCH PART)=Holland antillákbeli forint</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AOA">
+				<xsd:annotation>
+					<xsd:documentation>Kwanza: ANGOLA=Angolai kwanza</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ARS">
+				<xsd:annotation>
+					<xsd:documentation>Argentine Peso: ARGENTINA=Argentin peso</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AUD">
+				<xsd:annotation>
+					<xsd:documentation>Australian Dollar: AUSTRALIA; CHRISTMAS ISLAND; COCOS (KEELING) ISLANDS; HEARD ISLAND AND McDONALD ISLANDS; KIRIBATI; NAURU; NORFOLK ISLAND; TUVALU=Ausztrál dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AWG">
+				<xsd:annotation>
+					<xsd:documentation>Aruban Florin: ARUBA=Arubai florin</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AZN">
+				<xsd:annotation>
+					<xsd:documentation>Azerbaijan Manat: AZERBAIJAN=Azeri manat</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BAM">
+				<xsd:annotation>
+					<xsd:documentation>Convertible Mark: BOSNIA AND HERZEGOVINA=Bosnyák konvertibilis márka</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BBD">
+				<xsd:annotation>
+					<xsd:documentation>Barbados Dollar: BARBADOS=Barbadosi dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BDT">
+				<xsd:annotation>
+					<xsd:documentation>Taka: BANGLADESH=Bangladesi taka</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BGN">
+				<xsd:annotation>
+					<xsd:documentation>Bulgarian Lev: BULGARIA=Bolgár leva</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BHD">
+				<xsd:annotation>
+					<xsd:documentation>Bahraini Dinar: BAHRAIN=Bahreini dinár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BIF">
+				<xsd:annotation>
+					<xsd:documentation>Burundi Franc: BURUNDI=Burundi frank</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BMD">
+				<xsd:annotation>
+					<xsd:documentation>Bermudian Dollar: BERMUDA=Bermudai dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BND">
+				<xsd:annotation>
+					<xsd:documentation>Brunei Dollar: BRUNEI DARUSSALAM=Brunei dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BOB">
+				<xsd:annotation>
+					<xsd:documentation>Boliviano: BOLIVIA, PLURINATIONAL STATE OF=Bolíviai boliviano</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BOV">
+				<xsd:annotation>
+					<xsd:documentation>Mvdol: BOLIVIA, PLURINATIONAL STATE OF=Bolíviai Mvdol (alapkód)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BRL">
+				<xsd:annotation>
+					<xsd:documentation>Brazilian Real: BRAZIL=Brazil real</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BSD">
+				<xsd:annotation>
+					<xsd:documentation>Bahamian Dollar: BAHAMAS=Bahamai dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BTN">
+				<xsd:annotation>
+					<xsd:documentation>Ngultrum: BHUTAN=Bhutáni ngultrum</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BWP">
+				<xsd:annotation>
+					<xsd:documentation>Pula: BOTSWANA=Botswanai pula</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BYN">
+				<xsd:annotation>
+					<xsd:documentation>Belarusian Ruble:BELARUS=Belarusz rubel</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BYR">
+				<xsd:annotation>
+					<xsd:documentation>Historic use:Belarussian Ruble: BELARUS=Belarusz rubel (történelmi használat)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BZD">
+				<xsd:annotation>
+					<xsd:documentation>Belize Dollar: BELIZE=Belize-i dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CAD">
+				<xsd:annotation>
+					<xsd:documentation>Canadian Dollar: CANADA=Kanadai dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CDF">
+				<xsd:annotation>
+					<xsd:documentation>Congolese Franc: CONGO, THE DEMOCRATIC REPUBLIC OF=Kongói frank</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CHE">
+				<xsd:annotation>
+					<xsd:documentation>WIR Euro: SWITZERLAND=WIR euró (kiegészítő pénznem)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CHF">
+				<xsd:annotation>
+					<xsd:documentation>Swiss Franc: LIECHTENSTEIN; SWITZERLAND=Svájci frank</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CHW">
+				<xsd:annotation>
+					<xsd:documentation>WIR Franc: SWITZERLAND=WIR frank (kiegészítő pénznem)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CLF">
+				<xsd:annotation>
+					<xsd:documentation>Unidad de Fomento: CHILE=Unidad de Fomento (alapkód)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CLP">
+				<xsd:annotation>
+					<xsd:documentation>Chilean Peso: CHILE=Chilei peso</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CNY">
+				<xsd:annotation>
+					<xsd:documentation>Yuan Renminbi: CHINA=Kínai jüan (Renminbi)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="COP">
+				<xsd:annotation>
+					<xsd:documentation>Colombian Peso: COLOMBIA=Kolumbiai peso</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="COU">
+				<xsd:annotation>
+					<xsd:documentation>Unidad de Valor Real: COLOMBIA=Unidad de Valor Real</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CRC">
+				<xsd:annotation>
+					<xsd:documentation>Costa Rican Colon: COSTA RICA=Costa Rica-i colón</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CUC">
+				<xsd:annotation>
+					<xsd:documentation>Peso Convertible: CUBA=Kubai konvertibilis peso</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CUP">
+				<xsd:annotation>
+					<xsd:documentation>Cuban Peso: CUBA=Kubai peso</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CVE">
+				<xsd:annotation>
+					<xsd:documentation>Cabo Verde Escudo: CABO VERDE=Zöld-foki köztársasági escudo</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CZK">
+				<xsd:annotation>
+					<xsd:documentation>Czech Koruna: CZECHIA=Cseh korona</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DJF">
+				<xsd:annotation>
+					<xsd:documentation>Djibouti Franc: DJIBOUTI=Dzsibuti frank</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DKK">
+				<xsd:annotation>
+					<xsd:documentation>Danish Krone: DENMARK; FAROE ISLANDS; GREENLAND=Dán korona</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DOP">
+				<xsd:annotation>
+					<xsd:documentation>Dominican Peso: DOMINICAN REPUBLIC=Dominikai peso</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DZD">
+				<xsd:annotation>
+					<xsd:documentation>Algerian Dinar: ALGERIA=Algériai dinár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EGP">
+				<xsd:annotation>
+					<xsd:documentation>Egyptian Pound: EGYPT=Egyiptomi font</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ERN">
+				<xsd:annotation>
+					<xsd:documentation>Nakfa: ERITREA=Eritreai nakfa</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ETB">
+				<xsd:annotation>
+					<xsd:documentation>Ethiopian Birr: ETHIOPIA=Etióp birr</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EUR">
+				<xsd:annotation>
+					<xsd:documentation>Euro: ALAND ISLANDS; ANDORRA; AUSTRIA; BELGIUM; CYPRUS; ESTONIA; EUROPEAN UNION; FINLAND; FRANCE; FRENCH GUIANA; FRENCH SOUTHERN TERRITORIES; GERMANY; GREECE; GUADELOUPE; HOLY SEE (VATICAN CITY STATE); IRELAND; ITALY; LATVIA; LITHUANIA; LUXEMBOURG; MALTA; MARTINIQUE; MAYOTTE; MONACO; MONTENEGRO; NETHERLANDS; PORTUGAL; REUNION; SAINT BARTHELEMY; SAINT MARTIN (FRENCH PART); SAINT PIERRE AND MIQUELON; SAN MARINO; SLOVAKIA; SLOVENIA; SPAIN; Vatican City State (HOLY SEE)=Euró</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FJD">
+				<xsd:annotation>
+					<xsd:documentation>Fiji Dollar: FIJI=Fidzsi dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FKP">
+				<xsd:annotation>
+					<xsd:documentation>Falkland Islands Pound: FALKLAND ISLANDS (MALVINAS)=Falkland-szigeteki font</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GBP">
+				<xsd:annotation>
+					<xsd:documentation>Pound Sterling: GUERNSEY; ISLE OF MAN; JERSEY; UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND=Font sterling</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GEL">
+				<xsd:annotation>
+					<xsd:documentation>Lari: GEORGIA=Grúz lari</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GHS">
+				<xsd:annotation>
+					<xsd:documentation>Ghana Cedi: GHANA=Ghánai cedi</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GIP">
+				<xsd:annotation>
+					<xsd:documentation>Gibraltar Pound: GIBRALTAR=Gibraltári font</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GMD">
+				<xsd:annotation>
+					<xsd:documentation>Dalasi: GAMBIA=Gambiai dalasi</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GNF">
+				<xsd:annotation>
+					<xsd:documentation>Guinean Franc: GUINEA=Guineai frank</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GTQ">
+				<xsd:annotation>
+					<xsd:documentation>Quetzal: GUATEMALA=Guatemalai quetzal</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GYD">
+				<xsd:annotation>
+					<xsd:documentation>Guyana Dollar: GUYANA=Guyanai dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HKD">
+				<xsd:annotation>
+					<xsd:documentation>Hong Kong Dollar: HONG KONG=Hongkongi dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HNL">
+				<xsd:annotation>
+					<xsd:documentation>Lempira: HONDURAS=Hondurasi lempira</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HRK">
+				<xsd:annotation>
+					<xsd:documentation>Kuna: CROATIA=Kuna</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HTG">
+				<xsd:annotation>
+					<xsd:documentation>Gourde: HAITI=Haiti gourde</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HUF">
+				<xsd:annotation>
+					<xsd:documentation>Forint: HUNGARY=Magyar forint</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IDR">
+				<xsd:annotation>
+					<xsd:documentation>Rupiah: INDONESIA=Indonéz rúpia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ILS">
+				<xsd:annotation>
+					<xsd:documentation>New Israeli Sheqel: ISRAEL=Izraeli új sékel</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="INR">
+				<xsd:annotation>
+					<xsd:documentation>Indian Rupee: BHUTAN; INDIA=Indiai rúpia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IQD">
+				<xsd:annotation>
+					<xsd:documentation>Iraqi Dinar: IRAQ=Iraki dinár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IRR">
+				<xsd:annotation>
+					<xsd:documentation>Iranian Rial: IRAN, ISLAMIC REPUBLIC OF=Iráni riál</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ISK">
+				<xsd:annotation>
+					<xsd:documentation>Iceland Krona: ICELAND=Izlandi korona</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="JMD">
+				<xsd:annotation>
+					<xsd:documentation>Jamaican Dollar: JAMAICA=Jamaicai dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="JOD">
+				<xsd:annotation>
+					<xsd:documentation>Jordanian Dinar: JORDAN=Jordán dinár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="JPY">
+				<xsd:annotation>
+					<xsd:documentation>Yen: JAPAN=Japán jen</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KES">
+				<xsd:annotation>
+					<xsd:documentation>Kenyan Shilling: KENYA=Kenyai shilling</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KGS">
+				<xsd:annotation>
+					<xsd:documentation>Som: KYRGYZSTAN=Kirgiz szom</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KHR">
+				<xsd:annotation>
+					<xsd:documentation>Riel: CAMBODIA=Kambodzsai riel</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KMF">
+				<xsd:annotation>
+					<xsd:documentation>Comorian Franc: COMOROS=Comore-i frank</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KPW">
+				<xsd:annotation>
+					<xsd:documentation>North Korean Won: KOREA, DEMOCRATIC PEOPLE’S REPUBLIC OF=Észak-koreai von</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KRW">
+				<xsd:annotation>
+					<xsd:documentation>Won: KOREA, REPUBLIC OF=Dél-koreai von</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KWD">
+				<xsd:annotation>
+					<xsd:documentation>Kuwaiti Dinar: KUWAIT=Kuvaiti dinár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KYD">
+				<xsd:annotation>
+					<xsd:documentation>Cayman Islands Dollar: CAYMAN ISLANDS=Kajmán-szigeteki dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KZT">
+				<xsd:annotation>
+					<xsd:documentation>Tenge: KAZAKHSTAN=Kazah tenge</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LAK">
+				<xsd:annotation>
+					<xsd:documentation>Lao Kip: LAO PEOPLE’S DEMOCRATIC REPUBLIC=Laoszi kip</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LBP">
+				<xsd:annotation>
+					<xsd:documentation>Lebanese Pound: LEBANON=Libanoni font</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LKR">
+				<xsd:annotation>
+					<xsd:documentation>Sri Lanka Rupee: SRI LANKA=Srí Lanka-i rúpia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LRD">
+				<xsd:annotation>
+					<xsd:documentation>Liberian Dollar: LIBERIA=Libériai dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LSL">
+				<xsd:annotation>
+					<xsd:documentation>Loti: LESOTHO=Lesothói loti</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LTL">
+				<xsd:annotation>
+					<xsd:documentation>Historic use: Lithuanian Litas: LITHUANIA=Litván litas (történelmi használat)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LVL">
+				<xsd:annotation>
+					<xsd:documentation>Historic use: Latvian Lats: LATVIA=Lett lat (történelmi használat)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LYD">
+				<xsd:annotation>
+					<xsd:documentation>Libyan Dinar: LIBYA=Líbiai dinár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MAD">
+				<xsd:annotation>
+					<xsd:documentation>Moroccan Dirham: MOROCCO; WESTERN SAHARA=Marokkói dirham</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MDL">
+				<xsd:annotation>
+					<xsd:documentation>Moldovan Leu: MOLDOVA, REPUBLIC OF=Moldován lej</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MGA">
+				<xsd:annotation>
+					<xsd:documentation>Malagasy Ariary: MADAGASCAR=Madagaszkári ariary</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MKD">
+				<xsd:annotation>
+					<xsd:documentation>Denar: NORTH MACEDONIA=Észak-Macedón dénár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MMK">
+				<xsd:annotation>
+					<xsd:documentation>Kyat: MYANMAR=Mianmari kjap</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MNT">
+				<xsd:annotation>
+					<xsd:documentation>Tugrik: MONGOLIA=Mongol tugrik</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MOP">
+				<xsd:annotation>
+					<xsd:documentation>Pataca: MACAO=Makaói pataca</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MRO">
+				<xsd:annotation>
+					<xsd:documentation>Historic use: Ouguiya: MAURITANIA=Mauritániai ouguiya (történelmi használat)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MRU">
+				<xsd:annotation>
+					<xsd:documentation>Ouguiya: MAURITANIA=Mauritániai ouguiya</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MUR">
+				<xsd:annotation>
+					<xsd:documentation>Mauritius Rupee: MAURITIUS=Mauritiusi rúpia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MVR">
+				<xsd:annotation>
+					<xsd:documentation>Rufiyaa: MALDIVES=Maldív-szigeteki rúfia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MWK">
+				<xsd:annotation>
+					<xsd:documentation>Malawi Kwacha: MALAWI=Malawi kwacha</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MXN">
+				<xsd:annotation>
+					<xsd:documentation>Mexican Peso: MEXICO=Mexikói peso</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MXV">
+				<xsd:annotation>
+					<xsd:documentation>Mexican Unidad de Inversion (UDI): MEXICO=Unidad de Inversion (alapkód)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MYR">
+				<xsd:annotation>
+					<xsd:documentation>Malaysian Ringgit: MALAYSIA=Maláj ringgit</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MZN">
+				<xsd:annotation>
+					<xsd:documentation>Mozambique Metical: MOZAMBIQUE=Mozambiki metical</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NAD">
+				<xsd:annotation>
+					<xsd:documentation>Namibia Dollar: NAMIBIA=Namíbiai dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NGN">
+				<xsd:annotation>
+					<xsd:documentation>Naira: NIGERIA=Nigériai naira</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NIO">
+				<xsd:annotation>
+					<xsd:documentation>Cordoba Oro: NICARAGUA=Nicaraguai córdoba</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NOK">
+				<xsd:annotation>
+					<xsd:documentation>Norwegian Krone: BOUVET ISLAND; NORWAY; SVALBARD AND JAN MAYEN=Norvég korona</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NPR">
+				<xsd:annotation>
+					<xsd:documentation>Nepalese Rupee: NEPAL=Nepáli rúpia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NZD">
+				<xsd:annotation>
+					<xsd:documentation>New Zealand Dollar: COOK ISLANDS; NEW ZEALAND; NIUE; PITCAIRN; TOKELAU=Új-zélandi dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="OMR">
+				<xsd:annotation>
+					<xsd:documentation>Rial Omani: OMAN=Ománi riál</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PAB">
+				<xsd:annotation>
+					<xsd:documentation>Balboa: PANAMA=Panamai balboa</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PEN">
+				<xsd:annotation>
+					<xsd:documentation>Sol: PERU=Perui sol</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PGK">
+				<xsd:annotation>
+					<xsd:documentation>Kina: PAPUA NEW GUINEA=Pápua új-guineai kina</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PHP">
+				<xsd:annotation>
+					<xsd:documentation>Philippine Peso: PHILIPPINES=Fülöp-szigeteki peso</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PKR">
+				<xsd:annotation>
+					<xsd:documentation>Pakistan Rupee: PAKISTAN=Pakisztáni rúpia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PLN">
+				<xsd:annotation>
+					<xsd:documentation>Zloty: POLAND=Lengyel zloty</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PYG">
+				<xsd:annotation>
+					<xsd:documentation>Guarani: PARAGUAY=Paraguayi guaraní</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="QAR">
+				<xsd:annotation>
+					<xsd:documentation>Qatari Rial: QATAR=Katari riál</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RON">
+				<xsd:annotation>
+					<xsd:documentation>Romanian Leu: ROMANIA=Román lej</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RSD">
+				<xsd:annotation>
+					<xsd:documentation>Serbian Dinar: SERBIA=Szerb dinár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RUB">
+				<xsd:annotation>
+					<xsd:documentation>Russian Ruble: RUSSIAN FEDERATION=Orosz rubel</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RWF">
+				<xsd:annotation>
+					<xsd:documentation>Rwanda Franc: RWANDA=Ruandai frank</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SAR">
+				<xsd:annotation>
+					<xsd:documentation>Saudi Riyal: SAUDI ARABIA=Szaúdi riál</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SBD">
+				<xsd:annotation>
+					<xsd:documentation>Solomon Islands Dollar: SOLOMON ISLANDS=Salamon-szigeteki dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SCR">
+				<xsd:annotation>
+					<xsd:documentation>Seychelles Rupee: SEYCHELLES=Seychelle-i rúpia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SDG">
+				<xsd:annotation>
+					<xsd:documentation>Sudanese Pound: SUDAN=Szudáni font</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SEK">
+				<xsd:annotation>
+					<xsd:documentation>Swedish Krona: SWEDEN=Svéd korona</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SGD">
+				<xsd:annotation>
+					<xsd:documentation>Singapore Dollar: SINGAPORE=Szingapúri dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SHP">
+				<xsd:annotation>
+					<xsd:documentation>Saint Helena Pound: SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA=Szent Ilona-i font</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SLL">
+				<xsd:annotation>
+					<xsd:documentation>Leone: SIERRA LEONE=Sierra Leone-i leone</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SOS">
+				<xsd:annotation>
+					<xsd:documentation>Somali Shilling: SOMALIA=Szomáliai shilling</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SRD">
+				<xsd:annotation>
+					<xsd:documentation>Surinam Dollar: SURINAME=Suriname-i dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SSP">
+				<xsd:annotation>
+					<xsd:documentation>South Sudanese Pound: SOUTH SUDAN=Dél-szudáni font</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="STD">
+				<xsd:annotation>
+					<xsd:documentation>Historic use: Dobra: SAO TOME AND PRINCIPE=São Tomé és Príncipe-i dobra (történelmi használat)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="STN">
+				<xsd:annotation>
+					<xsd:documentation>Dobra: SAO TOME AND PRINCIPE=São Tomé és Príncipe-i dobra</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SVC">
+				<xsd:annotation>
+					<xsd:documentation>El Salvador Colon: EL SALVADOR=Salvadori colón</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SYP">
+				<xsd:annotation>
+					<xsd:documentation>Syrian Pound: SYRIAN ARAB REPUBLIC=Szír font</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SZL">
+				<xsd:annotation>
+					<xsd:documentation>Lilangeni: ESWATINI=Szváziföldi lilangeni</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="THB">
+				<xsd:annotation>
+					<xsd:documentation>Baht: THAILAND=Thai bát</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TJS">
+				<xsd:annotation>
+					<xsd:documentation>Somoni: TAJIKISTAN=Tádzsik szomoni</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TMT">
+				<xsd:annotation>
+					<xsd:documentation>Turkmenistan New Manat: TURKMENISTAN=Türkmén manat</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TND">
+				<xsd:annotation>
+					<xsd:documentation>Tunisian Dinar: TUNISIA=Tunéziai dinár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TOP">
+				<xsd:annotation>
+					<xsd:documentation>Pa’anga: TONGA=Tongai pa'anga</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TRY">
+				<xsd:annotation>
+					<xsd:documentation>Turkish Lira: TURKEY=Török líra</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TTD">
+				<xsd:annotation>
+					<xsd:documentation>Trinidad and Tobago Dollar: TRINIDAD AND TOBAGO=Trinidad és Tobagó-i dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TWD">
+				<xsd:annotation>
+					<xsd:documentation>New Taiwan Dollar: TAIWAN, PROVINCE OF CHINA=Tajvani új dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TZS">
+				<xsd:annotation>
+					<xsd:documentation>Tanzanian Shilling: TANZANIA, UNITED REPUBLIC OF=Tanzániai shilling</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UAH">
+				<xsd:annotation>
+					<xsd:documentation>Hryvnia: UKRAINE=Ukrán hrivnya</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UGX">
+				<xsd:annotation>
+					<xsd:documentation>Uganda Shilling: UGANDA=Ugandai shilling</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="USD">
+				<xsd:annotation>
+					<xsd:documentation>US Dollar: AMERICAN SAMOA; BONAIRE; SINT EUSTATIUS AND SABA; BRITISH INDIAN OCEAN TERRITORY; ECUADOR; EL SALVADOR; GUAM; HAITI; MARSHALL ISLANDS; MICRONESIA, FEDERATED STATES OF; NORTHERN MARIANA ISLANDS; PALAU; PANAMA; PUERTO RICO; TIMOR-LESTE; TURKS AND CAICOS ISLANDS; UNITED STATES; UNITED STATES MINOR OUTLYING ISLANDS; VIRGIN ISLANDS (BRITISH); VIRGIN ISLANDS (US)=Amerikai dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="USN">
+				<xsd:annotation>
+					<xsd:documentation>US Dollar (Next day): UNITED STATES=Amerikai dollár (következő nap) (alapkód)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="USS">
+				<xsd:annotation>
+					<xsd:documentation>Historic use: US Dollar (Same day): UNITED STATES=Amerikai dollár (adott nap) (alapkód) (történelmi használat)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UYI">
+				<xsd:annotation>
+					<xsd:documentation>Uruguay Peso en Unidades Indexadas (UI): URUGUAY=Uruguay Peso en Unidades Indexadas (UI) (alapkód)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UYU">
+				<xsd:annotation>
+					<xsd:documentation>Peso Uruguayo: URUGUAY=Uruguayi peso</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UYW">
+				<xsd:annotation>
+					<xsd:documentation>Unidad Previsional: URUGUAY=nyugdíjegység</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UZS">
+				<xsd:annotation>
+					<xsd:documentation>Uzbekistan Sum: UZBEKISTAN=Üzbég szom</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VEF">
+				<xsd:annotation>
+					<xsd:documentation>Historic use: Bolivar: VENEZUELA, BOLIVARIAN REPUBLIC OF=Venezuelai bolívar (történelmi használat)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VES">
+				<xsd:annotation>
+					<xsd:documentation>Bolívar Soberano: VENEZUELA, BOLIVARIAN REPUBLIC OF=Venezuelai bolívar</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VND">
+				<xsd:annotation>
+					<xsd:documentation>Dong: VIET NAM=Vietnami dong</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VUV">
+				<xsd:annotation>
+					<xsd:documentation>Vatu: VANUATU=Vanuatui vatu</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WST">
+				<xsd:annotation>
+					<xsd:documentation>Tala: SAMOA=Szamoai tala</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XAF">
+				<xsd:annotation>
+					<xsd:documentation>CFA Franc BEAC: CAMEROON; CENTRAL AFRICAN REPUBLIC; CHAD; CONGO; EQUATORIAL GUINEA; GABON=Közép-afrikai valutaközösségi frank</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XAG">
+				<xsd:annotation>
+					<xsd:documentation>Silver: ZZ11_Silver=Ezüst uncia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XAU">
+				<xsd:annotation>
+					<xsd:documentation>Gold: ZZ08_Gold=Arany uncia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XBA">
+				<xsd:annotation>
+					<xsd:documentation>Bond Markets Unit European Composite Unit (EURCO):  ZZ01_Bond Markets Unit European_EURCO=Európai Összetett Egység (EURCO) (kötvénypiaci egység)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XBB">
+				<xsd:annotation>
+					<xsd:documentation>Bond Markets Unit European Monetary Unit (E.M.U.-6): ZZ02_Bond Markets Unit European_EMU-6=Európai Pénzegység (E.M.U.-6) (kötvénypiaci egység)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XBC">
+				<xsd:annotation>
+					<xsd:documentation>Bond Markets Unit European Unit of Account 9 (E.U.A.-9): ZZ03_Bond Markets Unit European_EUA-9=Európai Egység a 9-es számlához (E.U.A.-9) (kötvénypiaci egység)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XBD">
+				<xsd:annotation>
+					<xsd:documentation>Bond Markets Unit European Unit of Account 17 (E.U.A.-17): ZZ04_Bond Markets Unit European_EUA-17=Európai Egység a 17-es számlához (E.U.A.-17) (kötvénypiaci egység)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XCD">
+				<xsd:annotation>
+					<xsd:documentation>East Caribbean Dollar: ANGUILLA; ANTIGUA AND BARBUDA; DOMINICA; GRENADA; MONTSERRAT; SAINT KITTS AND NEVIS; SAINT LUCIA; SAINT VINCENT AND THE GRENADINES=Kelet-karibi dollár</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XDR">
+				<xsd:annotation>
+					<xsd:documentation>SDR (Special Drawing Right): INTERNATIONAL MONETARY FUND (IMF)=Speciális valuta</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XFU">
+				<xsd:annotation>
+					<xsd:documentation>Historic use: UIC-Franc: ZZ05_UIC-Franc=UIC frank (Különleges megállapodott pénznem) (történelmi használat)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XOF">
+				<xsd:annotation>
+					<xsd:documentation>CFA Franc BCEAO: BENIN; BURKINA FASO; COTE D'IVOIRE; GUINEA-BISSAU; MALI; NIGER; SENEGAL; TOGO=Nyugat-afrikai valutaközösségi frank</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XPD">
+				<xsd:annotation>
+					<xsd:documentation>Palladium: ZZ09_Palladium=Palládium uncia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XPF">
+				<xsd:annotation>
+					<xsd:documentation>CFP Franc: FRENCH POLYNESIA; NEW CALEDONIA; WALLIS AND FUTUNA=Csendes-óceáni valutaközösségi frank</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XPT">
+				<xsd:annotation>
+					<xsd:documentation>Platinum: ZZ10_Platinum=Platina uncia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XSU">
+				<xsd:annotation>
+					<xsd:documentation>Sucre: SISTEMA UNITARIO DE COMPENSACION REGIONAL DE PAGOS "SUCRE"=Cukor: A regionális kompenzációs egyesült rendszerében használt elszámolási egység</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XUA">
+				<xsd:annotation>
+					<xsd:documentation>ADB Unit of Account: MEMBER COUNTRIES OF THE AFRICAN DEVELOPMENT BANK GROUP=Az Afrikai Fejlesztési Bank tagjai által használt elszámolási egység</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XXX">
+				<xsd:annotation>
+					<xsd:documentation>The codes assigned for transactions where no currency is involved: ZZ07_No_Currency=Nincs pénznem</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="YER">
+				<xsd:annotation>
+					<xsd:documentation>Yemeni Rial: YEMEN=Jemeni riál</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ZAR">
+				<xsd:annotation>
+					<xsd:documentation>Rand: LESOTHO; NAMIBIA; SOUTH AFRICA=Dél-afrikai rand</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ZMW">
+				<xsd:annotation>
+					<xsd:documentation>Zambian Kwacha: ZAMBIA=Zambiai kwacha</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ZWL">
+				<xsd:annotation>
+					<xsd:documentation>Zimbabwe Dollar: ZIMBABWE=Zimbabwei dollár (használata felfüggesztve)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--   -->
+	<!--  Language codes - ISO 639 - Part 1 (ISO 639-1:2002) / nyelvkódok
+
+A DPI séma az ISO nyelvi szabványcsalád kódlistáját használja és az ISO 639-1 listán alapszik. Ennek a listának a használata technikai okokból az OECD általi nemzetközi sémához igazodik, és nem jelent semmilyen hivatalos állásfoglalást az egyes joghatóságok jogi státuszát illetően.  
+    -->
+	<xsd:simpleType name="LanguageCode_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">ISO 639 - 1 rész nyelvkódok</xsd:documentation>
+			<xsd:documentation xml:lang="en">ISO 639 - Part 1 Language codes</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AA">
+				<xsd:annotation>
+					<xsd:documentation>Afar</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AB">
+				<xsd:annotation>
+					<xsd:documentation>Abkhazian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AF">
+				<xsd:annotation>
+					<xsd:documentation>Afrikaans</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AK">
+				<xsd:annotation>
+					<xsd:documentation>Akan</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SQ">
+				<xsd:annotation>
+					<xsd:documentation>Albanian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AM">
+				<xsd:annotation>
+					<xsd:documentation>Amharic</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AR">
+				<xsd:annotation>
+					<xsd:documentation>Arabic</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AN">
+				<xsd:annotation>
+					<xsd:documentation>Aragonese</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HY">
+				<xsd:annotation>
+					<xsd:documentation>Armenian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AS">
+				<xsd:annotation>
+					<xsd:documentation>Assamese</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AV">
+				<xsd:annotation>
+					<xsd:documentation>Avaric</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AE">
+				<xsd:annotation>
+					<xsd:documentation>Avestan</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AY">
+				<xsd:annotation>
+					<xsd:documentation>Aymara</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AZ">
+				<xsd:annotation>
+					<xsd:documentation>Azerbaijani</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BA">
+				<xsd:annotation>
+					<xsd:documentation>Bashkir</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BM">
+				<xsd:annotation>
+					<xsd:documentation>Bambara</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EU">
+				<xsd:annotation>
+					<xsd:documentation>Basque</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BE">
+				<xsd:annotation>
+					<xsd:documentation>Belarusian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BN">
+				<xsd:annotation>
+					<xsd:documentation>Bengali</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BH">
+				<xsd:annotation>
+					<xsd:documentation>Bihari languages</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BI">
+				<xsd:annotation>
+					<xsd:documentation>Bislama</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BS">
+				<xsd:annotation>
+					<xsd:documentation>Bosnian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BR">
+				<xsd:annotation>
+					<xsd:documentation>Breton</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BG">
+				<xsd:annotation>
+					<xsd:documentation>Bulgarian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MY">
+				<xsd:annotation>
+					<xsd:documentation>Burmese</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CA">
+				<xsd:annotation>
+					<xsd:documentation>Catalan; Valencian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CH">
+				<xsd:annotation>
+					<xsd:documentation>Chamorro</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CE">
+				<xsd:annotation>
+					<xsd:documentation>Chechen</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ZH">
+				<xsd:annotation>
+					<xsd:documentation>Chinese</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CU">
+				<xsd:annotation>
+					<xsd:documentation>Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CV">
+				<xsd:annotation>
+					<xsd:documentation>Chuvash</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KW">
+				<xsd:annotation>
+					<xsd:documentation>Cornish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CO">
+				<xsd:annotation>
+					<xsd:documentation>Corsican</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CR">
+				<xsd:annotation>
+					<xsd:documentation>Cree</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CS">
+				<xsd:annotation>
+					<xsd:documentation>Czech</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DA">
+				<xsd:annotation>
+					<xsd:documentation>Danish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DV">
+				<xsd:annotation>
+					<xsd:documentation>Divehi; Dhivehi; Maldivian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NL">
+				<xsd:annotation>
+					<xsd:documentation>Dutch; Flemish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DZ">
+				<xsd:annotation>
+					<xsd:documentation>Dzongkha</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EN">
+				<xsd:annotation>
+					<xsd:documentation>English</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EO">
+				<xsd:annotation>
+					<xsd:documentation>Esperanto</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ET">
+				<xsd:annotation>
+					<xsd:documentation>Estonian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EE">
+				<xsd:annotation>
+					<xsd:documentation>Ewe</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FO">
+				<xsd:annotation>
+					<xsd:documentation>Faroese</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FJ">
+				<xsd:annotation>
+					<xsd:documentation>Fijian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FI">
+				<xsd:annotation>
+					<xsd:documentation>Finnish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FR">
+				<xsd:annotation>
+					<xsd:documentation>French</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FY">
+				<xsd:annotation>
+					<xsd:documentation>Western Frisian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FF">
+				<xsd:annotation>
+					<xsd:documentation>Fulah</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KA">
+				<xsd:annotation>
+					<xsd:documentation>Georgian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DE">
+				<xsd:annotation>
+					<xsd:documentation>German</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GD">
+				<xsd:annotation>
+					<xsd:documentation>Gaelic; Scottish Gaelic</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GA">
+				<xsd:annotation>
+					<xsd:documentation>Irish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GL">
+				<xsd:annotation>
+					<xsd:documentation>Galician</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GV">
+				<xsd:annotation>
+					<xsd:documentation>Manx</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EL">
+				<xsd:annotation>
+					<xsd:documentation>Greek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GN">
+				<xsd:annotation>
+					<xsd:documentation>Guarani</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GU">
+				<xsd:annotation>
+					<xsd:documentation>Gujarati</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HT">
+				<xsd:annotation>
+					<xsd:documentation>Haitian; Haitian Creole</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HA">
+				<xsd:annotation>
+					<xsd:documentation>Hausa</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HE">
+				<xsd:annotation>
+					<xsd:documentation>Hebrew</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HZ">
+				<xsd:annotation>
+					<xsd:documentation>Herero</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HI">
+				<xsd:annotation>
+					<xsd:documentation>Hindi</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HO">
+				<xsd:annotation>
+					<xsd:documentation>Hiri Motu</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HR">
+				<xsd:annotation>
+					<xsd:documentation>Croatian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HU">
+				<xsd:annotation>
+					<xsd:documentation>Hungarian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IG">
+				<xsd:annotation>
+					<xsd:documentation>Igbo</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IS">
+				<xsd:annotation>
+					<xsd:documentation>Icelandic</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IO">
+				<xsd:annotation>
+					<xsd:documentation>Ido</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="II">
+				<xsd:annotation>
+					<xsd:documentation>Sichuan Yi; Nuosu</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IU">
+				<xsd:annotation>
+					<xsd:documentation>Inuktitut</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IE">
+				<xsd:annotation>
+					<xsd:documentation>Interlingue; Occidental</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IA">
+				<xsd:annotation>
+					<xsd:documentation>Interlingua (International Auxiliary Language Association)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ID">
+				<xsd:annotation>
+					<xsd:documentation>Indonesian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IK">
+				<xsd:annotation>
+					<xsd:documentation>Inupiaq</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IT">
+				<xsd:annotation>
+					<xsd:documentation>Italian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="JV">
+				<xsd:annotation>
+					<xsd:documentation>Javanese</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="JA">
+				<xsd:annotation>
+					<xsd:documentation>Japanese</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KL">
+				<xsd:annotation>
+					<xsd:documentation>Kalaallisut; Greenlandic</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KN">
+				<xsd:annotation>
+					<xsd:documentation>Kannada</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KS">
+				<xsd:annotation>
+					<xsd:documentation>Kashmiri</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KR">
+				<xsd:annotation>
+					<xsd:documentation>Kanuri</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KK">
+				<xsd:annotation>
+					<xsd:documentation>Kazakh</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KM">
+				<xsd:annotation>
+					<xsd:documentation>Central Khmer</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KI">
+				<xsd:annotation>
+					<xsd:documentation>Kikuyu; Gikuyu</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RW">
+				<xsd:annotation>
+					<xsd:documentation>Kinyarwanda</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KY">
+				<xsd:annotation>
+					<xsd:documentation>Kirghiz; Kyrgyz</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KV">
+				<xsd:annotation>
+					<xsd:documentation>Komi</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KG">
+				<xsd:annotation>
+					<xsd:documentation>Kongo</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KO">
+				<xsd:annotation>
+					<xsd:documentation>Korean</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KJ">
+				<xsd:annotation>
+					<xsd:documentation>Kuanyama; Kwanyama</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KU">
+				<xsd:annotation>
+					<xsd:documentation>Kurdish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LO">
+				<xsd:annotation>
+					<xsd:documentation>Lao</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LA">
+				<xsd:annotation>
+					<xsd:documentation>Latin</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LV">
+				<xsd:annotation>
+					<xsd:documentation>Latvian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LI">
+				<xsd:annotation>
+					<xsd:documentation>Limburgan; Limburger; Limburgish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LN">
+				<xsd:annotation>
+					<xsd:documentation>Lingala</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LT">
+				<xsd:annotation>
+					<xsd:documentation>Lithuanian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LB">
+				<xsd:annotation>
+					<xsd:documentation>Luxembourgish; Letzeburgesch</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LU">
+				<xsd:annotation>
+					<xsd:documentation>Luba-Katanga</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LG">
+				<xsd:annotation>
+					<xsd:documentation>Ganda</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MK">
+				<xsd:annotation>
+					<xsd:documentation>Macedonian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MH">
+				<xsd:annotation>
+					<xsd:documentation>Marshallese</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ML">
+				<xsd:annotation>
+					<xsd:documentation>Malayalam</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MI">
+				<xsd:annotation>
+					<xsd:documentation>Maori</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MR">
+				<xsd:annotation>
+					<xsd:documentation>Marathi</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MS">
+				<xsd:annotation>
+					<xsd:documentation>Malay</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MG">
+				<xsd:annotation>
+					<xsd:documentation>Malagasy</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MT">
+				<xsd:annotation>
+					<xsd:documentation>Maltese</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MN">
+				<xsd:annotation>
+					<xsd:documentation>Mongolian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NA">
+				<xsd:annotation>
+					<xsd:documentation>Nauru</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NV">
+				<xsd:annotation>
+					<xsd:documentation>Navajo; Navaho</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NR">
+				<xsd:annotation>
+					<xsd:documentation>Ndebele, South; South Ndebele</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ND">
+				<xsd:annotation>
+					<xsd:documentation>Ndebele, North; North Ndebele</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NG">
+				<xsd:annotation>
+					<xsd:documentation>Ndonga</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NE">
+				<xsd:annotation>
+					<xsd:documentation>Nepali</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NN">
+				<xsd:annotation>
+					<xsd:documentation>Norwegian Nynorsk; Nynorsk, Norwegian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NB">
+				<xsd:annotation>
+					<xsd:documentation>Bokmål, Norwegian; Norwegian Bokmål</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NO">
+				<xsd:annotation>
+					<xsd:documentation>Norwegian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NY">
+				<xsd:annotation>
+					<xsd:documentation>Chichewa; Chewa; Nyanja</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="OC">
+				<xsd:annotation>
+					<xsd:documentation>Occitan; Provençal</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="OJ">
+				<xsd:annotation>
+					<xsd:documentation>Ojibwa</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="OR">
+				<xsd:annotation>
+					<xsd:documentation>Oriya</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="OM">
+				<xsd:annotation>
+					<xsd:documentation>Oromo</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="OS">
+				<xsd:annotation>
+					<xsd:documentation>Ossetian; Ossetic</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PA">
+				<xsd:annotation>
+					<xsd:documentation>Panjabi; Punjabi</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FA">
+				<xsd:annotation>
+					<xsd:documentation>Persian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PI">
+				<xsd:annotation>
+					<xsd:documentation>Pali</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PL">
+				<xsd:annotation>
+					<xsd:documentation>Polish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PT">
+				<xsd:annotation>
+					<xsd:documentation>Portuguese</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PS">
+				<xsd:annotation>
+					<xsd:documentation>Pushto; Pashto</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="QU">
+				<xsd:annotation>
+					<xsd:documentation>Quechua</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RM">
+				<xsd:annotation>
+					<xsd:documentation>Romansh</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RO">
+				<xsd:annotation>
+					<xsd:documentation>Romanian; Moldavian; Moldovan</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RN">
+				<xsd:annotation>
+					<xsd:documentation>Rundi</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RU">
+				<xsd:annotation>
+					<xsd:documentation>Russian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SG">
+				<xsd:annotation>
+					<xsd:documentation>Sango</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SA">
+				<xsd:annotation>
+					<xsd:documentation>Sanskrit</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SI">
+				<xsd:annotation>
+					<xsd:documentation>Sinhala; Sinhalese</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SK">
+				<xsd:annotation>
+					<xsd:documentation>Slovak</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SL">
+				<xsd:annotation>
+					<xsd:documentation>Slovenian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SE">
+				<xsd:annotation>
+					<xsd:documentation>Northern Sami</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SM">
+				<xsd:annotation>
+					<xsd:documentation>Samoan</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SN">
+				<xsd:annotation>
+					<xsd:documentation>Shona</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SD">
+				<xsd:annotation>
+					<xsd:documentation>Sindhi</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SO">
+				<xsd:annotation>
+					<xsd:documentation>Somali</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ST">
+				<xsd:annotation>
+					<xsd:documentation>Sotho, Southern</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ES">
+				<xsd:annotation>
+					<xsd:documentation>Spanish; Castilian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SC">
+				<xsd:annotation>
+					<xsd:documentation>Sardinian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SR">
+				<xsd:annotation>
+					<xsd:documentation>Serbian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SS">
+				<xsd:annotation>
+					<xsd:documentation>Swati</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SU">
+				<xsd:annotation>
+					<xsd:documentation>Sundanese</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SW">
+				<xsd:annotation>
+					<xsd:documentation>Swahili</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SV">
+				<xsd:annotation>
+					<xsd:documentation>Swedish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TY">
+				<xsd:annotation>
+					<xsd:documentation>Tahitian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TA">
+				<xsd:annotation>
+					<xsd:documentation>Tamil</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TT">
+				<xsd:annotation>
+					<xsd:documentation>Tatar</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TE">
+				<xsd:annotation>
+					<xsd:documentation>Telugu</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TG">
+				<xsd:annotation>
+					<xsd:documentation>Tajik</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TL">
+				<xsd:annotation>
+					<xsd:documentation>Tagalog</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TH">
+				<xsd:annotation>
+					<xsd:documentation>Thai</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BO">
+				<xsd:annotation>
+					<xsd:documentation>Tibetan</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TI">
+				<xsd:annotation>
+					<xsd:documentation>Tigrinya</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TO">
+				<xsd:annotation>
+					<xsd:documentation>Tonga (Tonga Islands)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TN">
+				<xsd:annotation>
+					<xsd:documentation>Tswana</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TS">
+				<xsd:annotation>
+					<xsd:documentation>Tsonga</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TK">
+				<xsd:annotation>
+					<xsd:documentation>Turkmen</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TR">
+				<xsd:annotation>
+					<xsd:documentation>Turkish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TW">
+				<xsd:annotation>
+					<xsd:documentation>Twi</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UG">
+				<xsd:annotation>
+					<xsd:documentation>Uighur; Uyghur</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UK">
+				<xsd:annotation>
+					<xsd:documentation>Ukrainian</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UR">
+				<xsd:annotation>
+					<xsd:documentation>Urdu</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UZ">
+				<xsd:annotation>
+					<xsd:documentation>Uzbek</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VE">
+				<xsd:annotation>
+					<xsd:documentation>Venda</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VI">
+				<xsd:annotation>
+					<xsd:documentation>Vietnamese</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VO">
+				<xsd:annotation>
+					<xsd:documentation>Volapük</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CY">
+				<xsd:annotation>
+					<xsd:documentation>Welsh</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WA">
+				<xsd:annotation>
+					<xsd:documentation>Walloon</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WO">
+				<xsd:annotation>
+					<xsd:documentation>Wolof</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="XH">
+				<xsd:annotation>
+					<xsd:documentation>Xhosa</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="YI">
+				<xsd:annotation>
+					<xsd:documentation>Yiddish</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="YO">
+				<xsd:annotation>
+					<xsd:documentation>Yoruba</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ZA">
+				<xsd:annotation>
+					<xsd:documentation>Zhuang; Chuang</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ZU">
+				<xsd:annotation>
+					<xsd:documentation>Zulu</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--   -->
+	<!-- MS codes / EU tagállamok országkódja-->
+	<xsd:simpleType name="MSCountryCode_Type">
+		<xsd:annotation>
+			<xsd:documentation>Tagállamok országkódjai. / List of the MS code.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AT"/>
+			<xsd:enumeration value="BE"/>
+			<xsd:enumeration value="BG"/>
+			<xsd:enumeration value="CY"/>
+			<xsd:enumeration value="CZ"/>
+			<xsd:enumeration value="DK"/>
+			<xsd:enumeration value="EE"/>
+			<xsd:enumeration value="FI"/>
+			<xsd:enumeration value="FR"/>
+			<xsd:enumeration value="DE"/>
+			<xsd:enumeration value="GR"/>
+			<xsd:enumeration value="HU"/>
+			<xsd:enumeration value="HR"/>
+			<xsd:enumeration value="IE"/>
+			<xsd:enumeration value="IT"/>
+			<xsd:enumeration value="LV"/>
+			<xsd:enumeration value="LT"/>
+			<xsd:enumeration value="LU"/>
+			<xsd:enumeration value="MT"/>
+			<xsd:enumeration value="NL"/>
+			<xsd:enumeration value="PL"/>
+			<xsd:enumeration value="PT"/>
+			<xsd:enumeration value="RO"/>
+			<xsd:enumeration value="SK"/>
+			<xsd:enumeration value="SI"/>
+			<xsd:enumeration value="ES"/>
+			<xsd:enumeration value="SE"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--   -->
+</xsd:schema>

@@ -1,0 +1,1330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:dpi="urn:oecd:ties:dpi:v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:stf="urn:oecd:ties:dpistf:v1" xmlns:iso="urn:oecd:ties:isodpitypes:v1" targetNamespace="urn:oecd:ties:dpi:v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.09">
+	<xsd:import namespace="urn:oecd:ties:isodpitypes:v1" schemaLocation="isodpitypes_v1.0.xsd"/>
+	<xsd:import namespace="urn:oecd:ties:dpistf:v1" schemaLocation="oecddpitypes_v1.0.xsd"/>
+	<!--+++++++++++++++++++++++  Újrafelhasználható egyszerű típusok / Reusable Simple types ++++++++++++++++++++++++++++++++++++++ -->
+	<!-- Message típus definíciók / Message type definitions -->
+	<xsd:simpleType name="MessageType_EnumType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">A MessageType kötelező elem jelzi az adatszolgáltatás típusát</xsd:documentation>
+			<xsd:documentation xml:lang="en">Message type mandatory element defines the type of reporting.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="DPI">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a típus jelzi a 2013. évi XXXVII. törvény (Aktv.) alapján az Adatszolgáltatásra kötelezett platformüzemeltetők adatszolgáltatásához kapcsolódó üzeneteket.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This type defines the messages to be reported by the Reporting Platform Operators under Act XXXVII of 2013 (Aktv.).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- MessageTypeIndic - 4 -->
+	<xsd:simpleType name="DPIMessageTypeIndic_EnumType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">A MessageTypeIndic kötelező elem jelzi a küldött üzenet jellegét.</xsd:documentation>
+			<xsd:documentation xml:lang="en">The MessageTypeIndic mandatory element defines the type of message sent.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="DPI401">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Az üzenet új (esetlegesen kiegészítő) adatokat tartalmaz.</xsd:documentation>
+					<xsd:documentation xml:lang="en">The message contains new (including additional) information.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DPI402">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Az üzenet valamely korábban küldött adatot érintő helyesbítést tartalmaz.</xsd:documentation>
+					<xsd:documentation xml:lang="en">The message contains corrections for previously sent information.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DPI403">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Az üzenet azt jelzi, hogy az Adatszolgáltatásra kötelezett platformüzemeltető az átvilágítási eljárás eredményeként nem azonosított jelentendő adatot az adatszolgáltatási időszakot érintően (Aktv. 21/B. § (2) bekezdés), vagy azonosított, de mentesül az adatok jelentése alól, mivel ugyanazon információkat egy másik Adatszolgáltatásra kötelezett platformüzemeltető már bejelentette (Aktv. 5. melléklet III/A/1-2. pontok második mondata).</xsd:documentation>
+					<xsd:documentation xml:lang="en">The message advises that the Reporting Platform Operator did not identify any reportable information through its due diligence procedures for the reportable period (Aktv. Section 21/B. paragraph 2), or that it identified such information however is exempt from reporting, because the same information has been reported by another Reporting Platform Operator (second sentence of Section III/A/1 and 2 of Annex 5 of the Aktv.)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--  -->
+	<xsd:simpleType name="INType_EnumType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Az INType jelzi a feltüntetett azonosító szám típusát.</xsd:documentation>
+			<xsd:documentation xml:lang="en">The INType defines the type of identification number being sent.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="LEI">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">jogi személy azonosító (Legal Entity Identifier)</xsd:documentation>
+					<xsd:documentation xml:lang="en">Legal Entity Identifier</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EIN">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">szervezet azonosító szám (Entity Identification Number)</xsd:documentation>
+					<xsd:documentation xml:lang="en">Entity Identification Number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IIN">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu"> Az Aktv. 21/A. § (5) bekezdése szerinti egyedi azonosító szám (Individual Identification Number)</xsd:documentation>
+					<xsd:documentation xml:lang="en">Individual Identification Number pursuant to paragraph 5 of Section 21/A. of the Aktv.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BRN">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">cégnyilvántartási szám (Business Registration Number)</xsd:documentation>
+					<xsd:documentation xml:lang="en">Business Registration Number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="Other">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">egyéb</xsd:documentation>
+					<xsd:documentation xml:lang="en">Other</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--  -->
+	<!--DPI ingatlan típus / DPI Property Type -->
+	<xsd:simpleType name="DPIPropertyType_EnumType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Főtevékenységek alapján
+			</xsd:documentation>
+			<xsd:documentation xml:lang="en">Based on main business activities
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="DPI901">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">iroda</xsd:documentation>
+					<xsd:documentation xml:lang="en">Office</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DPI902">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">hotelszoba</xsd:documentation>
+					<xsd:documentation xml:lang="en">Hotel room</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DPI903">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">panziószoba</xsd:documentation>
+					<xsd:documentation xml:lang="en">Bed and Breakfast room</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DPI904">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">ház</xsd:documentation>
+					<xsd:documentation xml:lang="en">House</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DPI905">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">apartman</xsd:documentation>
+					<xsd:documentation xml:lang="en">Apartment</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DPI906">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">mobil otthon</xsd:documentation>
+					<xsd:documentation xml:lang="en">Mobile Home</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DPI907">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">kemping</xsd:documentation>
+					<xsd:documentation xml:lang="en">Campground</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DPI908">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">hajó</xsd:documentation>
+					<xsd:documentation xml:lang="en">Boat</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DPI909">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">parkolóhely</xsd:documentation>
+					<xsd:documentation xml:lang="en">Parking Space</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DPI910">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">egyéb</xsd:documentation>
+					<xsd:documentation xml:lang="en">Other</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--  -->
+	<!--DPI adózói kötődés típus / DPI Nexus Type -->
+	<xsd:simpleType name="Nexus_EnumType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Ez jelzi, hogy a Platformüzemeltető milyen alapon minősül Adatszolgáltatásra kötelezett platformüzemeltetőnek Magyarországon. (Aktv. 5. melléklet I/A/4. pont)
+			</xsd:documentation>
+			<xsd:documentation xml:lang="en">This indicates the reason for which the Platform Operator is to be considered a Reporting Platform Operator in Hungary. (Aktv. Annex 5 Section I/A/4.)
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="RPONEX1">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Az Adatszolgáltatásra kötelezett platformüzemeltető Magyarországon adóügyi illetőséggel rendelkezik.</xsd:documentation>
+					<xsd:documentation xml:lang="en">The Reporting Platform Operator is resident for tax purposes in Hungary.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RPONEX2">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Az Adatszolgáltatásra kötelezett platformüzemeltető egyik tagállamban sem rendelkezik adóügyi illetőséggel, azonban Magyarország jogszabályainak megfelelően jegyezték be.</xsd:documentation>
+					<xsd:documentation xml:lang="en">The Reporting Platform Operator does not have a residence for tax purposes in any EU Member State but it is incorporated under the laws of Hungary.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RPONEX3">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Az Adatszolgáltatásra kötelezett platformüzemeltető egyik tagállamban sem rendelkezik adóügyi illetőséggel, azonban az üzletvezetésének helye (ideértve a tényleges üzletvezetés helyét) Magyarországon található.</xsd:documentation>
+					<xsd:documentation xml:lang="en">The Reporting Platform Operator does not have a residence for tax purposes in any EU Member State but it has its place of management (including effective management) in Hungary.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RPONEX4">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Az Adatszolgáltatásra kötelezett platformüzemeltető egyik tagállamban sem rendelkezik adóügyi illetőséggel, azonban állandó telephellyel rendelkezik Magyarországon, és nem Elismert nem uniós platformüzemeltető.</xsd:documentation>
+					<xsd:documentation xml:lang="en">The Reporting Platform Operator does not have a residence for tax purposes in any EU Member State but it has a permanent establishment in Hungary and it is not a Qualified Non-Union Platform Operator.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RPONEX5">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Az Adatszolgáltatásra kötelezett platformüzemeltetőt egyik tagállamban sem jegyezték be és nem rendelkezik adóügyi illetőséggel, üzletvezetési hellyel vagy állandó telephellyel egyik tagállamban sem, de lehetővé teszi valamely Érintett tevékenységnek a Jelentendő értékesítő általi elvégzését, vagy valamely tagállamban található ingatlan bérbeadását magában foglaló Érintett tevékenység végzését, és nem Elismert nem uniós platformüzemeltető.</xsd:documentation>
+					<xsd:documentation xml:lang="en">The Reporting Platform Operator is neither resident for tax purposes, nor incorporated or managed in any EU Member State, nor has a permanent establishment in any EU Member State but it facilitates the carrying out of a Relevant Activity by Reportable Sellers or a Relevant Activity involving the rental of immovable property located in an EU Member State and it is not a Qualified Non-Union Platform Operator.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--++++++++++++++++++ Újrafelhasználható összetett típusok / Reusable Complex types +++++++++++++++++++++++++++++++++++++ -->
+	<!-- -->
+	<!--A személy (Party) típusnál rögzített formában megadható név (Name) elemek / The Name of a Party, given in fixed Form-->
+	<xsd:complexType name="NamePerson_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Az adatszolgáltató legfeljebb kilenc elemre bontva tudja feltüntetni egy személy névadatait, melyből a családnév (LastName) és utónév (FirstName) kitöltése kötelező.</xsd:documentation>
+			<xsd:documentation xml:lang="en">The reporting entity may spread the data about the name of a party over up to nine elements, of which the LastName and FirstName are mandatory.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="PrecedingTitle" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Megnevezés, pl. Őexcellenciája, elhunyt hagyatéka...</xsd:documentation>
+					<xsd:documentation xml:lang="en">Preceding title. Example: His Excellency,Estate of the Late ...</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Title" type="stf:StringMin1Max200_Type" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Titulus, pl.: Úr, Dr, Úrhölgy, Mr, Ms, Herr, stb. Lehet több is.</xsd:documentation>
+					<xsd:documentation xml:lang="en">Greeting title. Example: Mr, Dr, Ms, Herr, etc. Can have multiple titles.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="FirstName">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">A személy utóneve. Ha a személynek nincs utóneve, az NFN értéket kell feltüntetni.</xsd:documentation>
+					<xsd:documentation xml:lang="en">First name of the person. It the person has no fist name, the value entered should be NFN.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="stf:StringMin1Max200_Type">
+							<xsd:attribute name="xnlNameType" type="stf:StringMin1Max200_Type">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="hu">Ez jelzi az utónév típusát. Pl.: keresztnév, apja neve, stb. Egyes országokban az utónév lehet maga a családnév. Ezzel az attribútummal lehet pontosítani ennek a névelemnek a típusát.</xsd:documentation>
+									<xsd:documentation xml:lang="en">Defines the name type of FirstName. Example: Given Name, Forename, Christian Name, Father's Name, etc. In some countries, FirstName could be a Family Name or a Surname. Use this attribute to define the type for this name.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="MiddleName" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">második keresztnév vagy középső név (sok nemzetiség számára lényeges része a névnek). Középső névből több is lehet.</xsd:documentation>
+					<xsd:documentation xml:lang="en">Second given name or Middle name (essential part of the name for many nationalities). Can have multiple middle names.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="stf:StringMin1Max200_Type">
+							<xsd:attribute name="xnlNameType" type="stf:StringMin1Max200_Type">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="hu">Ezzel lehet pontosítani a középső név típusát.</xsd:documentation>
+									<xsd:documentation xml:lang="en">Defines the name type of Middle Name.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="NamePrefix" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">név előtag, pl.: idősb, ifjabb, özvegy, de, van, van de, von, stb.</xsd:documentation>
+					<xsd:documentation xml:lang="en">name prefix, example: idősb, ifjabb, özvegy, de, van, van de, von, etc.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="stf:StringMin1Max200_Type">
+							<xsd:attribute name="xnlNameType" type="stf:StringMin1Max200_Type">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="hu">Ezzel lehet pontosítani a név előtag típusát.</xsd:documentation>
+									<xsd:documentation xml:lang="en">Defines the type of name prefix.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="LastName">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">A személy családneve, vezetékneve</xsd:documentation>
+					<xsd:documentation xml:lang="en">Family name or Surname of the person</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="stf:StringMin1Max200_Type">
+							<xsd:attribute name="xnlNameType" type="stf:StringMin1Max200_Type">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="hu">Ez pontosítja ennek a névelemnek a típusát. Pl.: vezetéknév, családnév, apja neve, anyja neve, stb. Egyes országokban az utónevet vagy keresztnevet használják családnévként.</xsd:documentation>
+									<xsd:documentation xml:lang="en">Defines the name type of LastName. Example: Family name, Surname, Father's name, Mother's Name, etc. In some countries, LastName could be the given name or first name.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GenerationIdentifier" type="stf:StringMin1Max200_Type" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Jnr, Thr Third, III</xsd:documentation>
+					<xsd:documentation xml:lang="en">Jnr, Thr Third, III</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Suffix" type="stf:StringMin1Max200_Type" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Például: PhD, VC, QC</xsd:documentation>
+					<xsd:documentation xml:lang="en">Example: PhD, VC, QC</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="GeneralSuffix" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Például: Deceased, Retired ...</xsd:documentation>
+					<xsd:documentation xml:lang="en">Example: Deceased, Retired ...</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="nameType" type="stf:OECDNameType_EnumType" use="optional">
+			<xsd:annotation>
+				<xsd:documentation xml:lang="hu">Abban az esetben, ha több név megadása engedélyezett egy személyhez, ez az attribútum szolgál arra, hogy jelezze az egyes nevek típusát.</xsd:documentation>
+				<xsd:documentation xml:lang="en">In case multiple names are allowed for the same party, this attribute is a qualifier to indicate the type of a particular name.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<!-- -->
+	<!--A természetes személy azonosítására szolgáló adatok csoportja / Collection of all Data describing a person as a  Party -->
+	<xsd:complexType name="PersonParty_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Ez a konténer elem tartalmazza a természetes személyre vonatkozó valamennyi azonosító adatot. Az illetőség szerinti tagállam, az Adóazonosító szám, a név, a cím és a születési dátum kötelező elem. Ha az átvilágítási eljárás során az Adatszolgáltatásra kötelezett platformüzemeltető több illetőség szerinti tagállamot, illetve több Adóazonosító számot azonosít, valamennyit fel kell tüntetni az adatszolgáltatásban, ezért ezek többszörözhető elemek. Az Adóazonosító számot kibocsájtó tagállam feltüntetése is kötelező a kapcsolódó attribútumban. Ha az Adóazonosító szám hiányzik, azt az "unknown" attribútummal kell jelezni, mely esetben a kapcsolódó kibocsájtó tagállamot nem kell megadni, azonban a születési hely megadása kötelezővé válik. Az egyes részelemek struktúrájával kapcsolatos leírást a jelen séma egyéb részei tartalmazzák.</xsd:documentation>
+			<xsd:documentation xml:lang="en">This container brings together all identification data about a person as a party. Residence country code, TIN, name, address and birth date are required components. If during the due diligence procedure the Reporting Platform Operator identifies multiple Member States of residence or multiple TINs, all of them must be provided in the report, therefore these are repeatable elements. The issuing Member State of the TIN is also mandatory in the corresponding attribute. If there is no TIN, the attribute "unknown" should be used, and in this case the issuedby attribute should not be used, however the place of birth becomes a mandatory element. The structures of all of the subelements are defined elsewhere in this schema.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ResCountryCode" type="iso:CountryCode_Type" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az ismételhető kötelező elem jelzi azon tagállamokat, amelyekben a Jelentendő értékesítő az Aktv. 5. melléklet II/D. pontja alapján illetőséggel rendelkezik.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This repeatable mandatory data element describes the Member State(s) of residence of the Reportable Seller, as determined pursuant to Section II/D. of Annex 5 of the Aktv. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TIN" type="dpi:TIN_Type" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az ismételhető kötelező elem jelzi az Értékesítő részére az illetőség szerinti tagállam által kiadott bármely Adóazonosító számot, és attribútuma az azt kibocsájtó tagállamot. Ha az Adatszolgáltatásra kötelezett platformüzemeltető nem köteles beszerezni az Adóazonosító számot, mert az Értékesítő illetősége szerinti tagállam az Értékesítő számára ilyet nem ad ki, vagy kiad, de nem írja elő annak bekérését, akkor a kapcsolódó lentebb ismertetett "unknown" attribútumot “true” értékre kell állítani. Ebben az esetben a TIN elem üresen hagyható, illetve ha ott bármely érték kerül feltüntetésre, azt az adóhatóság figyelmen kívül hagyja. Továbbá, ha több Adóazonosító szám elem kerül feltüntetésre, az "unknown" attribútum egyiknél sem használható. Figyelem: jelenleg valamennyi tagállam előírja az Adóazonosító szám bekérését.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This repeatable mandatory data element provides the tax identification number (TIN) issued to the Seller by the Member State(s) of residence. In case the TIN is not required to be collected by the Reporting Platform Operator, because the Member State of residence of the Seller does not issue a TIN, or does not require the collection of the TIN issued, then the Unknown attribute (see below) must be set to “true”. In this case the TIN element should be left empty, and if any value is provided, it will be ignored by the tax administration. Furthermore, in case more than one TIN are provided, any provided element cannot be flagged as “unknown”. Attention: currently all Member States require the collection of the TIN issued.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="VAT" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Itt kell feltüntetni az Értékesítő HÉA azonosító számát, ha ilyen rendelkezésre áll.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This is where the Seller's VAT Identification number should be provided, if available.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Name" type="dpi:NamePerson_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem tartalmazza a személy nevét.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory element should contain the name of the person.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Address" type="dpi:Address_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem tartalmazza a személy címét, annak országkódját és a cím típusát.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory element should contain the address of the person, including the country code of the address as well as the type of the address.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BirthInfo">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem tartalmazza a magánszemély Értékesítő születési adatait. Részelemei a kötelező születési dátum, továbbá a születési hely. Az utóbbi abban az esetben kötelező elem, ha a magánszemély Értékesítővel kapcsolatosan nem került Adóazonosító szám feltüntetésre.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory data element contains the birth information of an Individual Seller. It is composed of the mandatory date of birth element and the place of birth element. The place of birth is mandatory only when there was no TIN provided for the Individual Seller.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="BirthDate" type="xsd:date">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="hu">Ez a kötelező elem a születési dátum jelzésére szolgál. A kért formátum: ÉÉÉÉ-HH-NN. Nem lehet korábbi mint 1900-01-01, sem későbbi mint az üzenet beküldésének dátuma.</xsd:documentation>
+								<xsd:documentation xml:lang="en">This mandatory element provides the date of birth, complying with the following format: YYYY-MM-DD. It cannot be earlier than 1900-01-01 or later than the date the message is sent.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="BirthPlace" type="dpi:BirthPlace_Type" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="hu">Ez az elem a születési helyet jelzi. A születési hely a születési ország és város egysége. A születési város feltüntetése esetén meg kell adni a megfelelő országkódot is, illetve ha a születési hely szerinti ország már nem létezik, vagy nem szerepel a megadható országkódok között, azt a korábbi ország név (FormerCountryName) elemben kell megadni. Születési ország feltüntetése esetén a születési várost is meg kell adni.</xsd:documentation>
+								<xsd:documentation xml:lang="en">This element provides information about the place of birth. The place of birth is a unit of country and city of birth. If the city of birth is specified, the corresponding country code must be provided, or if the country of birth no longer exists or its country code is not listed, it must be specified in the FormerCountryName element. If country of birth is indicated, the city of birth must also be provided.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- -->
+	<!--Strukturált címadatok / Address Fix -->
+	<xsd:complexType name="AddressFix_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Ha lehetséges, a címadatot strukturált formában kell megadni. A részelemek közül a város minden esetben kötelező, a többi részelem abban az esetben kötelező, ha rendelkezésre áll.</xsd:documentation>
+			<xsd:documentation xml:lang="en">Where possible the address should be provided in structured format. The 'City' subelement is always mandatory, and the other subelements are mandatory when available.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Street" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">utca</xsd:documentation>
+					<xsd:documentation xml:lang="en">The street.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="BuildingIdentifier" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">házszám</xsd:documentation>
+					<xsd:documentation xml:lang="en">The identifier of the building on the street, typically a number.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SuiteIdentifier" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">iroda vagy hasonló épületrész azonosító</xsd:documentation>
+					<xsd:documentation xml:lang="en">The identifier of an office or similar part of a building.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="FloorIdentifier" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">emelet</xsd:documentation>
+					<xsd:documentation xml:lang="en">The identifier of a floor within a building.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DistrictName" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">kerület neve</xsd:documentation>
+					<xsd:documentation xml:lang="en">The name of the district of the address.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="POB" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">postafiók</xsd:documentation>
+					<xsd:documentation xml:lang="en">The post office box.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PostCode" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">irányítószám</xsd:documentation>
+					<xsd:documentation xml:lang="en">The post code of the address.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="City" type="stf:StringMin1Max200_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">város (kötelező elem)</xsd:documentation>
+					<xsd:documentation xml:lang="en">The city of the address. (mandatory element)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CountrySubentity" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ország alegység, az országnak a kerületnél vagy városnál nagyobb földrajzi területe, például egy megye, egy megyeszékhely, egy tartomány, egy kanton stb.</xsd:documentation>
+					<xsd:documentation xml:lang="en">A geographic area of the country larger than district or city, for example a county, a department, a Land, a canton, etc.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--  -->
+	<!--A személy címe, strukturált, vagy szabad, vagy mindkét formátumban megadva / The Address of a Party, given in fixed or free Form, possibly in both Forms -->
+	<xsd:complexType name="Address_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">A címet elsődlegesen strukturált formátumban (AddressFix) kell megadni. A szabad formátum (AddressFree) akkor megengedett, ha a címadat az adatszolgáltató rendszereiben is csak szabad formátumban található meg, és az adatszolgáltató azt nem tudja megbízható módon részelemekre bontani. Figyelem: a cím országkódja az AddressFix és AddressFree elemeken kívüli önálló elemben helyezkedik el. Ha az adatszolgáltató strukturáltan és szabad formátumban is megadja a címet, ebben az esetben az AddressFix megelőzi az AddressFree elemet.</xsd:documentation>
+			<xsd:documentation xml:lang="en">The structured address (AddressFix) should be prioritized. The free format (AddressFree) is allowed if the address is only available in free format in the systems of the reporting entity and the reporting entity cannot reliably identify and distinguish the different parts of the address. Attention: the country code of the address is located in a separate element outside the AddressFix and AddressFree elements. If the address is provided by the reporting entity in both structured and free format, AddressFix precedes AddressFree.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="CountryCode">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem jelzi a címhez kapcsolódó országkódot.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory data element provides the country code associated with the address.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="iso:CountryCode_Type">
+						<xsd:minLength value="1"/>
+						<xsd:maxLength value="2"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:choice>
+				<xsd:element name="AddressFree" type="stf:StringMin1Max4000_Type">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="hu">Ez az elem lehetővé teszi a címadatok szabad szöveges bevitelét. Csak kivételes körülmények között használható, ha a címet nem lehet strukturált formátumban megadni.</xsd:documentation>
+						<xsd:documentation xml:lang="en">This data element allows input of address information in free text. It should only be used in exceptional circumstances when it is impossible to provide the address in the fixed format.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:sequence>
+					<xsd:element name="AddressFix" type="dpi:AddressFix_Type"/>
+					<xsd:element name="AddressFree" type="stf:StringMin1Max4000_Type" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="hu">Ez az elem lehetővé teszi a címadatok szabad szöveges bevitelét.</xsd:documentation>
+							<xsd:documentation xml:lang="en">This data element allows input of address information in free text.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:choice>
+		</xsd:sequence>
+		<xsd:attribute name="legalAddressType" type="stf:OECDLegalAddressType_EnumType" use="optional">
+			<xsd:annotation>
+				<xsd:documentation xml:lang="hu">Ez az adattípus a címhez kapcsolható attribútum, amely a cím jellegét pontosítja (székhely, lakóhely, stb.).
+				A lehetséges értékek az alábbiak:
+				‒	OECD301= residentialOrBusiness (lakóhely vagy üzleti cím)
+				‒	OECD302= residential (lakóhely)
+				‒	OECD303= business (üzleti cím)
+				‒	OECD304= registeredOffice (székhely)
+				‒	OECD305= unspecified (nem meghatározott)
+				Az Adatszolgáltatásra kötelezett platformüzemeltető címeként annak székhelyét kell feltüntetni, ezért ott ez az attribútum csak OECD304 lehet.</xsd:documentation>
+				<xsd:documentation xml:lang="en">This is a datatype for an attribute to an address. It serves to indicate the legal character of that address (registered office, residential etc.).
+				The possible values are:
+				‒	OECD301= residentialOrBusiness
+				‒	OECD302= residential
+				‒	OECD303= business
+				‒	OECD304= registeredOffice
+				‒	OECD305= unspecified
+				The address of the Reporting Platform Operator must represent the “Registered Office Address” (OECD304).</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<!--  -->
+	<!--Születési hely / The place of birth -->
+	<xsd:complexType name="BirthPlace_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Ez az elem a születési helyet jelzi. A születési hely a születési ország és város egysége. A születési város feltüntetése esetén meg kell adni a megfelelő országkódot is, illetve ha a születési hely szerinti ország már nem létezik, vagy nem szerepel a megadható országkódok között, azt a korábbi ország név (FormerCountryName) elemben kell megadni. Születési ország feltüntetése esetén a születési várost is meg kell adni.</xsd:documentation>
+			<xsd:documentation xml:lang="en">This element provides information about the place of birth. The place of birth is a unit of country and city of birth. If the city of birth is specified, the corresponding country code must be provided, or if the country of birth no longer exists or its country code is not listed, it must be specified in the FormerCountryName element. If country of birth is indicated, the city of birth must also be provided.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="City" type="stf:StringMin1Max200_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">születési város</xsd:documentation>
+					<xsd:documentation xml:lang="en">The city of birth.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CitySubentity" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">születési város alegysége</xsd:documentation>
+					<xsd:documentation xml:lang="en">The city subentity of birth.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CountryInfo">
+				<xsd:complexType>
+					<xsd:choice>
+						<xsd:element name="CountryCode" type="iso:CountryCode_Type">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="hu">születési ország/joghatóság országkódja</xsd:documentation>
+								<xsd:documentation xml:lang="en">The country code of the birth country/jurisdiction.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="FormerCountryName" type="stf:StringMin1Max200_Type">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="hu">A már nem létező születési ország/joghatóság jelölésére szolgáló elem.</xsd:documentation>
+								<xsd:documentation xml:lang="en">This element indicates the former country/jurisdiction of birth.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--  -->
+	<!--Pénzösszegeknél használt általános típus / General Type for Monetary Amounts -->
+	<xsd:complexType name="MonAmnt_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Ez az elem pénzösszegek feltüntetésére szolgál. Az ilyen összegeket egészszámként, azaz tizedesjegyek nélkül kell megadni. Az összeghez tartozó pénznem kódját az ISO 4217 kódlistából kell kiválasztani és a currCode attribútumban kell megadni.</xsd:documentation>
+			<xsd:documentation xml:lang="en">This data type is to be used whenever monetary amounts are to be communicated. Such amounts shall be given in full units, i.e. without decimals. The code for the currency in which the value is expressed has to be taken from the ISO codelist 4217 and added in attribute currCode.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:integer">
+				<xsd:attribute name="currCode" type="iso:currCode_Type" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!--  -->
+	<!--Szervezet neve / Organisation name -->
+	<xsd:complexType name="NameOrganisation_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Ebben a kötelező elemben kell megadni a Szervezet (Platformüzemeltető, Szervezet Értékesítő) nevét.</xsd:documentation>
+			<xsd:documentation xml:lang="en">This mandatory element indicates the Name of the Entity (Platform Operator, Entity Seller).</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="stf:StringMin1Max200_Type"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- -->
+	<!--Adóazonosító szám / TIN -->
+	<xsd:complexType name="TIN_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Ez az érintett magánszemély vagy Szervezet Adóazonosító száma. Az azt kibocsájtó tagállamtól függően állhat csak számból, vagy tartalmazhat egyéb karaktereket is. Ha az elem értéket tartalmaz, a kibocsájtót jelző 'issuedBy' attribútum is kötelező.</xsd:documentation>
+			<xsd:documentation xml:lang="en">This is the Tax Identification Number for the party in question. Depending on the issuing Member State the identifier may be strictly numeric, or may contain other characters as well. If value is provided for this element, the attribute 'issuedBy' is mandatory, to designate the issuer of the identifier.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="stf:StringMin0Max200_Type">
+				<xsd:attribute name="issuedBy" type="iso:CountryCode_Type" use="optional">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="hu">Az Adóazonosító számot kibocsájtó tagállam országkódja. Mindig kötelező, kivéve, ha a TIN elem "unknown" attribútuma igazra van állítva.</xsd:documentation>
+						<xsd:documentation xml:lang="en">Country code of Member State of issuance of the TIN. It should always be provided, unless the TIN element is flagged as “unknown”.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="unknown" type="xsd:boolean" use="optional">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="hu">Ez az attribútum akkor kötelező, ha az Adóazonosító szám nem áll rendelkezésre, vagy nincs. Ha az attribútum igazra van állítva, a TIN elemnél megadott értéket az adóhatóság figyelmen kívül hagyja.</xsd:documentation>
+						<xsd:documentation xml:lang="en">This attribute must be provided if the TIN is not available or inexistent. Any value provided for a TIN flagged as unknown will be discarded.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- -->
+	<!--Üzenet specifikáció: Az üzenet egészét azonosító, egészére vonatkozó adat / Message specification: Data identifying and describing the message as a whole-->
+	<xsd:complexType name="MessageSpec_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Az üzenet fejlécében feltüntetett információk azonosítják az adatszolgáltatót, jelzik az üzenet létrehozásának időpontját, az érintett adatszolgáltatási időszakot, és az adatszolgáltatás jellegét (eredeti adatszolgáltatás, helyesbítés, nullás). Itt szerepel az üzenet egyedi azonosító száma is.</xsd:documentation>
+			<xsd:documentation xml:lang="en">Information in the message header identifies the reporting entity that is sending the message, it specifies when the message was created, what period the report is for, and the nature of the report (original, corrected, null). It also contains the unique identifier of the message.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="SendingEntityIN" type="stf:StringMin1Max200_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem jelzi az adatszolgáltató azonosító számát, amely a magyar adószám. Magyar adószámmal nem rendelkező adatszolgáltató esetében itt az Aktv. 21/A. § (5) bekezdése szerint a NAV által megállapított egyedi azonosító számot kell feltüntetni. Jogutódlással történő megszűnés esetén a jogutód kötelezettsége teljesíteni a jogelőd által nem teljesített kötelezettségeket (adatszolgáltatást), így ilyenkor itt az üzenetet beküldő jogutód magyar adószámát kell feltüntetni.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory data element identifies the identification number of the reporting entity sending the message, and is the Hungarian tax identification number. If the reporting entity does not have a Hungarian tax identification number, the Individual Identification Number allocated by the NTCA pursuant to paragraph 5 of Section 21/A. of the Aktv should be indicated here. In the event of termination by succession, the legal successor is obliged to fulfil the obligations (data reporting) not fulfilled by the predecessor, so the Hungarian tax number of the legal successor sending the message must be indicated here in that case.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MessageType" type="dpi:MessageType_EnumType" fixed="DPI">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem jelzi, hogy az üzenet az Aktv. alapján Adatszolgáltatásra kötelezett platformüzemeltető adatszolgáltatásához kapcsolódik. A megengedett egyedüli értéke "DPI".</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory data element indicated that the message is related to the reporting obligations of the Reporting Platform Operator under the Aktv. The only allowable entry is “DPI”.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Contact" type="stf:StringMin1Max4000_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Az esetleges későbbi egyeztetések érdekében itt lehet megadni az ügyintéző nevét és elérhetőségét. Ügyintézőként annak a személynek a nevét kérjük feltüntetni, aki az adatszolgáltatás összeállításáért felelt, és aki az adatszolgáltatás esetleges javításába bevonható!</xsd:documentation>
+					<xsd:documentation xml:lang="en">The name and contact details of the administrator may be provided here for possible future consultation. Please indicate as the administrator the name of the person responsible for compiling the data and who may be involved in any corrections to the data.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MessageRefId" type="stf:StringMin1Max170_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Az üzenet azonosítására szolgáló, az adatszolgáltató által meghatározott egyedi azonosító szám. A MessageRefId-nek az adatszolgáltató magyar adószáma 8 jegyű törzsszámával kell kezdődnie, amelyet az Adatszolgáltatási időszak éve, majd az adatszolgáltató által meghatározott és üzenetenként egyedi azonosító követ. Ha az adatszolgáltatónak nincs magyar adószáma, a MessageRefId-nek az Aktv. 21/A. § (5) bekezdése szerint a NAV által megállapított egyedi azonosító számmal kell kezdődnie, amelyet az Adatszolgáltatási időszak éve, majd az adatszolgáltató által meghatározott és üzenetenként egyedi azonosító követ.</xsd:documentation>
+					<xsd:documentation xml:lang="en">Unique identifier for this message, determined by the reporting entity. The MessageRefID must start with the first 8 digits of the Hungarian tax identification number of the reporting entity, followed by the year of the Reportable Period, then a unique identifier given per message by the reporting entity. If the reporting entity does not have a Hungarian tax identification number, the MessageRefId must start with the Individual Identification Number allocated by the NTCA pursuant to paragraph 5 of Section 21/A. of the Aktv, followed by the year of the Reportable Period, then a unique identifier given per message by the reporting entity.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MessageTypeIndic" type="dpi:DPIMessageTypeIndic_EnumType">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem jelzi a küldött üzenet jellegét, azt, hogy az üzenet új adatot (beleértve a helyesbítésként utólag küldött kiegészítő új adatokat is) vagy korrekciót (már beküldött adat helyesbítését vagy törlését) tartalmaz, vagy nullás adatszolgáltatás.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory data element specifies the type of the message that is sent, i.e. whether it contains new data (including supplemental new data) or correction (amending or deleting previously provided data), or is a null report.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ReportingPeriod" type="xsd:date">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Az Adatszolgáltatási időszak, amelyre az üzenetben feltüntetett információk vonatkoznak. Formátuma ÉÉÉÉ-HH-NN, és az Adatszolgáltatási időszak szerinti naptári év utolsó napjával egyezik meg. Az elem értéke nem lehet a beadás évét követő dátum.</xsd:documentation>
+					<xsd:documentation xml:lang="en">The reportable period for which information is transmitted in the current message. This is in yyyy-MM-DD format, and corresponds to the last day of the calendar year of the Reportable Period. The value cannot be a date after the year of submission.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Timestamp" type="xsd:dateTime">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az elem jelzi az üzenet összeállításának napját és idejét. A kért formátum: ÉÉÉÉ-HH-NN’T’óó:pp:mm. Töredékmásodperc használata három értékig engedett, ilyen esetben a formátum: ÉÉÉÉ-HH-NN’T’óó:pp:mm.nnn. Az alapértelmezett időzóna a "CET" (közép-európai idő), más időzóna nem használható.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This data element identifies the date and time when the message was compiled. The format for use is yyyy-MM-DD’T’hh:mm:ss. Fractions of seconds may be used upto 3 digits, in which case the format should be yyyy-MM-DD’T’hh:mm:ss.nnn. The default time zone is “CET” (Central European Time), a different time zone cannot be provided.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- -->
+	<!--Szervezet azonosító száma / Organisation Identification Number -->
+	<xsd:complexType name="OrganisationIN_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Ebben az elemben tüntethető fel a Szervezet azonosítására szolgáló olyan azonosító jel, amely nem Adóazonosító szám vagy HÉA azonosító szám. Az 'issuedBy' attribútum jelzi a kibocsájtót, míg az 'INType' attribútum nevesíti az azonosító típusát. Ha a Platformüzemeltető részére az Aktv. 21/A. § (5) bekezdése szerint a NAV egyedi azonosító számot állapított meg, azt kötelezően fel kell tüntetni, és ebben az esetben az INType attribútum értéke "IIN" lesz.</xsd:documentation>
+			<xsd:documentation xml:lang="en">This element indicates an identification number/identification code for the Entity which is not a TIN or a VAT number. Attribute 'issuedBy' is required to designate the issuer of the identifier.  Attribute 'INType' defines the type of identification number. If the Platform Operator was allocated an Individual Identification Number by the NTCA pursuant to paragraph 5 of Section 21/A. of the Aktv, it should be indicated here, and the corresponding INType must be "IIN".</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="stf:StringMin1Max200_Type">
+				<xsd:attribute name="issuedBy" type="iso:CountryCode_Type" use="optional">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="hu">kibocsájtó ország országkódja</xsd:documentation>
+						<xsd:documentation xml:lang="en">Country code of issuing country</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="INType" type="dpi:INType_EnumType" use="required">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="hu">Ez az attribútum jelzi a feltüntetett azonosító típusát, és az alábbiak valamelyike lehet:
+						•	IIN az Aktv. 21/A. § (5) bekezdése szerinti egyedi azonosító szám (Individual Identification Number);
+						•	LEI a jogi személy azonosító (Legal Entity Identifier);
+						•	EIN a szervezet azonosító szám (Entity Identification Number); 
+						•	BRN a cégnyilvántartási szám (Business Registration Number); vagy
+						•	Other, azaz egyéb.
+</xsd:documentation>
+						<xsd:documentation xml:lang="en">This attribute defines the type of identification number being sent among the following:
+						•	[EU Specific]: IIN for the reporting of an individual identification number;
+						•	LEI for the reporting of a legal entity identifier;
+						•	EIN for the reporting of an entity identification number; 
+						•	BRN for the reporting of a business registration number; or
+						•	Other.
+</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!-- -->
+	<!--A Szervezetet körülíró valamennyi adat összessége / Collection of all Data describing an organisationy  as party-->
+	<xsd:complexType name="OrganisationParty_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">
+			Ez a konténer elem tartalmazza a Szervezetre vonatkozó valamennyi azonosító adatot. Az Adóazonosító szám, a név és a cím kötelező elem. A Platformüzemeltető esetében kötelező elem továbbá a Platform megnevezése és a Nexus, az Értékesítőhöz kapcsolódóan pedig kötelező elem az illetőség szerinti országkód. Ha az Értékesítőhöz kapcsolódóan az átvilágítási eljárás során az Adatszolgáltatásra kötelezett platformüzemeltető több illetőség szerinti tagállamot, illetve több Adóazonosító számot azonosít, valamennyit fel kell tüntetni az adatszolgáltatásban, ezért ezek többszörözhető elemek. Az Adóazonosító számot kibocsájtó tagállam feltüntetése is kötelező a kapcsolódó attribútumban. Ha az Adóazonosító szám hiányzik, azt az "unknown" attribútummal kell jelezni, mely esetben a kapcsolódó kibocsájtó tagállamot nem kell megadni. Az egyes részelemek struktúrájával kapcsolatos leírást a jelen séma egyéb részei tartalmazzák.</xsd:documentation>
+			<xsd:documentation xml:lang="en">
+			This container brings together all data about an Entity as a party. TIN, name and address are required components. In the case of a Platform Operator, the Platform Business Name and the Nexus are also required, and in the case of Seller, the Residence Country Code is also mandatory. If during the due diligence procedure the Reporting Platform Operator identifies multiple Member States of residence or multiple TINs, all of them must be provided in the report, therefore these are repeatable elements. The issuing Member State of the TIN is also mandatory in the corresponding attribute. If there is no TIN, the attribute "unknown" should be used, and in this case the issuedby attribute should not be used. The structures of all of the subelements are defined elsewhere in this schema.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ResCountryCode" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az ismételhető elem jelzi a Szervezet illetőség szerinti joghatóságának országkódját. A Platformüzemeltetők esetében az illetőség szerinti országként az adóügyi illetőség szerinti joghatóságot kell feltüntetni, illetve annak hiányában a bejegyzés helye szerinti, az üzletvezetésének helye (ideértve a tényleges üzletvezetés helyét) szerinti, vagy az állandó telephelye szerinti joghatóságot. Az Értékesítők esetében ez az elem kötelező, és azokat a tagállamokat jelzi, amelyekben a Jelentendő értékesítő az Aktv. 5. melléklet II/D. pontja alapján illetőséggel rendelkezik.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This repeatable data element describes the residence country code(s) of the Entity. In case of a Platform Operator the residence country code should correspond to the jurisdiction where the Platform Operator is resident for tax purposes or, where it does not have a residence for tax purposes, either the jurisdiction it is incorporated under or the jurisdiction that it has its place of management (including effective management) in, or where it has a permanent establishment. In case of a Seller this element should always be present and should correspond to the Member State(s) of residence of the Reportable Seller, as determined pursuant to Section II/D. of Annex 5 of the Aktv.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="iso:CountryCode_Type"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="TIN" type="dpi:TIN_Type" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező ismételhető elem jelzi a Szervezet illetősége szerinti tagállam által kibocsájtott Adóazonosító számot. Ha a Szervezet nem rendelkezik Adóazonosító számmal, vagy az nem ismert, az unknown attribútumot igazként kell jelölni. Ha több TIN érték kerül megadásra, az unknown attribútum nem használható.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory repeatable data element provides the tax identification number (TIN) issued by the Member State of residence of the entity. In case the entity does not have a TIN, or the TIN is not known, the unknown attribute must be set to “true”. In case more than one TIN are provided, any provided element cannot be flagged as “unknown”.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="IN" type="dpi:OrganisationIN_Type" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ebben az elemben tüntethető fel a Szervezet azonosítására szolgáló olyan azonosító jel, amely nem Adóazonosító szám vagy HÉA azonosító szám. Az 'issuedBy' attribútum jelzi a kibocsájtót, míg az 'INType' attribútum nevesíti az azonosító típusát. Ha a Platformüzemeltető részére az Aktv. 21/A. § (5) bekezdése szerint a NAV egyedi azonosító számot állapított meg, azt kötelezően fel kell tüntetni, és ebben az esetben az INType attribútum értéke "IIN" lesz. Ha az Értékesítő rendelkezik cégnyilvántartási számmal, azt kötelezően fel kell tüntetni, és ebben az esetben az INType attribútum értéke "BRN" lesz.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This element indicates an identification number/identification code for the Entity which is not a TIN or a VAT number. Attribute 'issuedBy' is required to designate the issuer of the identifier.  Attribute 'INType' defines the type of identification number. If the Platform Operator was allocated an Individual Identification Number by the NTCA pursuant to paragraph 5 of Section 21/A. of the Aktv, it should be indicated here, and the corresponding INType must be "IIN". If the Seller has a business registration number, it should be indicated here, and the corresponding INType must be "BRN".</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="VAT" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ebben az elemben adható meg a Szervezet HÉA azonosító száma.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This data element can be used to indicate the VAT Identification number of the Entity.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Name" type="dpi:NameOrganisation_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az elem tartalmazza a Szervezet hivatalos megnevezését.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This element should contain the legal name of the Entity.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PlatformBusinessName" type="stf:StringMin1Max200_Type" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az ismételhető kötelező elem tartalmazza a Platform(ok) nevét/neveit, amely(ek)re vonatkozóan az Adatszolgáltatásra kötelezett platformüzemeltető adatot szolgáltat. Az Értékesítők esetében ez az elem nem használható, a Platformüzemeltető esetében pedig kötelező.</xsd:documentation>
+					<xsd:documentation xml:lang="en">The repeatable Platform Business Name element identifies the business name(s) of the Platform(s) in respect of which the Reporting Platform Operator is reporting. This element must not be used for the Entity Sellers, but it is mandatory for the Platform Operator.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Address" type="dpi:Address_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem tartalmazza a Szervezet címadatait, beleértve a cím országkódját és típusát.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory data element contains the address of the Entity, including the country code of the address as well as the type of the address.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Nexus" type="dpi:Nexus_EnumType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez jelzi, hogy a Platformüzemeltető milyen alapon minősül Adatszolgáltatásra kötelezett platformüzemeltetőnek Magyarországon (Aktv. 5. melléklet I/A/4. pont). Az Értékesítők esetében ez az elem nem használható, a Platformüzemeltető esetében pedig kötelező.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This indicates the reason for which the Platform Operator is to be considered a Reporting Platform Operator in Hungary (Aktv. Annex 5 Section I/A/4.). This element must not be used for the Entity Sellers, but it is mandatory for the Platform Operator.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AssumedReporting" type="xsd:boolean" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az elem jelzi, hogy az Adatszolgáltatásra kötelezett platformüzemeltető azért nem jelent valamely Értékesítőre vonatkozó információt, mivel azt helyette másik Platformüzemeltető teljesíti. Ilyen esetben az elem értékét igazra kell állítani, egyéb esetben az érték hamis. Az Értékesítők esetében ez az elem nem használható.</xsd:documentation>
+					<xsd:documentation xml:lang="en">The Assumed Reporting element identifies whether the Reporting Platform Operator is not reporting information on Reportable Sellers, because another Reporting Platform Operator has assumed the reporting. In this case this element should be set to “true”, otherwise, this element should be set to “false”. This element must not be provided for Entity Sellers.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- -->
+	<!-- Helyesbíthető Platformüzemeltető típus / Correctable Platform Operator_Type-->
+	<xsd:complexType name="CorrectablePlatformOperator_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">A Platformüzemeltető típus tartalmazza az Adatszolgáltatásra kötelezett platformüzemeltetőre vonatkozó adatokat. Ez egy helyesbíthető típus, melynél a kapcsolódó DocSpec elemben feltüntetett egyedi azonosító alapján azonosítható az adat az üzeneten belül.</xsd:documentation>
+			<xsd:documentation xml:lang="en">The PlatformOperator type contains information about the Reporting Platform Operator. This is a correctable type, where the unique identifier in the DocSpec element is used to identify the particular record within the message.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="dpi:OrganisationParty_Type">
+				<xsd:sequence>
+					<xsd:element name="DocSpec" type="stf:DocSpec_Type">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="hu">A DocSpec kötelező elem azonosítja a küldött DPI üzeneten belüli egyes helyesbíthető adatokat és azok jellegét (új, helyesbítés, törlés, újraküldés).</xsd:documentation>
+							<xsd:documentation xml:lang="en">DocSpec mandatory element identifies the particular correctable report within the DPI message being transmitted and its nature (new, correction, deletion, resent).</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- -->
+	<!--Helyesbíthető Jelentendő értékesítő / Correctable Reportable Seller-->
+	<xsd:complexType name="CorrectableReportableSeller_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Ez a típus tartalmazza a Jelentendő értékesítőre vonatkozó adatokat. Ez egy helyesbíthető típus, melynél a kapcsolódó DocSpec elemben feltüntetett egyedi azonosító alapján azonosítható az adat az üzeneten belül.</xsd:documentation>
+			<xsd:documentation xml:lang="en">This type contains information about the Reportable Seller. This is a correctable type, where the unique identifier in the DocSpec element is used to identify the particular record within the message.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="dpi:ReportableSeller_Type">
+				<xsd:sequence>
+					<xsd:element name="DocSpec" type="stf:DocSpec_Type">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="hu">A DocSpec kötelező elem azonosítja a küldött DPI üzeneten belüli egyes helyesbíthető adatokat és azok jellegét (új, helyesbítés, törlés).</xsd:documentation>
+							<xsd:documentation xml:lang="en">DocSpec mandatory element identifies the particular correctable report within the DPI message being transmitted and its nature (new, correction, deletion).</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!--  -->
+	<!--Pénzforgalmi jelzőszám az Identity típuson belül / Financial Identifier for Identity-->
+	<xsd:complexType name="FinancialIdentifier_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Ez az elem tartalmazza a Pénzforgalmi jelzőszámot, amely az Ellenérték kifizetésére, illetve jóváírására szolgáló bankszámlának vagy egyéb hasonló pénzforgalmi számlának a Platformüzemeltető rendelkezésére álló egyedi azonosító száma vagy hivatkozási száma. Nem kell feltüntetni, ha a Jelentendő értékesítő az Aktv. 5. melléklet II/D. pont alapján meghatározott illetősége szerinti tagállam hatáskörrel rendelkező hatósága közzétette, hogy nem szándékozik a Pénzforgalmi jelzőszámot az Értékesítő azonosítása céljából felhasználni.</xsd:documentation>
+			<xsd:documentation xml:lang="en">This element contains the Financial Account Identifier, which is the unique identifying number or reference available to the Platform Operator of the bank account or other similar payment services account to which the Consideration is paid or credited. It does not have to be reported if the competent authority of the Member State where the Reportable Seller is resident in the meaning of paragraph D of Section II of Annex 5 of the Aktv has not published that it does not intend to use the Financial Account Identifier for the identification of the Seller.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Identifier" type="dpi:Identifier_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem a Jelentendő értékesítőhöz tartozó Pénzforgalmi jelzőszám azonosítóját tartalmazza. A Pénzforgalmi jelzőszám tartalmazhatja az IBAN-számot, a bankazonosítót és a számlaszámot, valamint bármely más olyan fizetési számla azonosítót, amelyet az Adatszolgáltatásra kötelezett platformüzemeltető az Ellenérték átutalásakor használt a Jelentendő értékesítőhöz kapcsolódóan.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory element contains the Financial Account Identifier pertaining to the Reportable Seller. Financial Account Identifiers can include the IBAN number, sort code and account number and any other payment account identifier that the Reporting Platform Operator used for transferring the Consideration in respect to a Reportable Seller.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AccountHolderName" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az elem tartalmazza az Ellenérték kifizetésére vagy jóváírására szolgáló pénzügyi számla tulajdonosának nevét, ha ez eltér a Jelentendő értékesítőtől, ha az az Adatszolgáltatásra kötelezett platformüzemeltető rendelkezésére áll.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This element contains the name of the holder of the financial account to which the Consideration is paid or credited, where different from the name of the Reportable Seller and to the extent available to the Reporting Platform Operator.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="OtherInfo" type="stf:StringMin1Max400_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az elem tartalmazza az adott számlatulajdonossal kapcsolatban az Adatszolgáltatásra kötelezett platformüzemeltető rendelkezésére álló bármilyen egyéb pénzügyi azonosító adatát.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This element contains any other identifying information available to the Reporting Platform Operator with respect to that account holder.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--  -->
+	<!--Azonosító típus a Pénzforgalmi jelzőszámhoz / Identifier for Financial Identifier-->
+	<xsd:complexType name="Identifier_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Ez a típus a Jelentendő értékesítőhöz tartozó Pénzforgalmi jelzőszám azonosítóját tartalmazza. A Pénzforgalmi jelzőszám tartalmazhatja az IBAN-számot, a bankazonosítót és a számlaszámot, valamint bármely más olyan fizetési számla azonosítót, amelyet az Adatszolgáltatásra kötelezett platformüzemeltető az Ellenérték átutalásakor használt a Jelentendő értékesítőhöz kapcsolódóan.</xsd:documentation>
+			<xsd:documentation xml:lang="en">This type contains the Financial Account Identifier pertaining to the Reportable Seller. Financial Account Identifiers can include the IBAN number, sort code and account number and any other payment account identifier that the Reporting Platform Operator used for transferring the Consideration in respect to a Reportable Seller.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="stf:StringMin1Max200_Type">
+				<xsd:attribute name="AccountNumberType" type="stf:StringMin1Max200_Type">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="hu">Ez az attribútum jelzi a küldött számla típusát.</xsd:documentation>
+						<xsd:documentation xml:lang="en">This attribute describes the type of account number being sent.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<!--  -->
+	<!--Egyéb tevékenységek (összesett) / OtherActivities (Complex)-->
+	<xsd:complexType name="OtherActivities_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Ez a típus az ingatlan bérbeadásán kívüli egyéb Érintett tevékenységekhez kapcsolódóan tartalmazza az Ellenértékkel, Érintett tevékenységek számával, levont vagy felszámított díjjakkal, jutalékkal, adóval kapcsolatos információkat.</xsd:documentation>
+			<xsd:documentation xml:lang="en">This type contains information about the Consideration, number of Relevant Activities, fees, commissions or taxes withheld or charged in connection Relevant Activities other than the rental of immovable property.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Consideration" type="dpi:ConsiderationType">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem tartalmazza negyedéves bontásban az Adatszolgáltatási időszakban kifizetett vagy jóváírt Ellenérték összegét.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory element contains the total Consideration paid or credited during each quarter of the Reportable Period.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="NumberOfActivities" type="dpi:NumberOfActivities_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem tartalmazza negyedéves bontásban azon Érintett tevékenységek számát, amelyek tekintetében az Ellenértéket kifizették vagy jóváírták az Adatszolgáltatási időszakban.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory element contains the number of Relevant Activities in respect of which the Consideration was paid or credited during each quarter of the Reportable Period. </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Fees" type="dpi:FeesType">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem tartalmazza negyedéves bontásban az Adatszolgáltatási időszakban az Adatszolgáltatásra kötelezett platformüzemeltető által levont vagy felszámított díjak, jutalékok összegét.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory element contains any fees, commissions withheld or charged by the Reporting Platform Operator during each quarter of the Reportable Period.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Taxes" type="dpi:TaxesType">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem tartalmazza negyedéves bontásban az Adatszolgáltatási időszakban az Adatszolgáltatásra kötelezett platformüzemeltető által levont vagy felszámított adók összegét.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory element contains any taxes withheld or charged by the Reporting Platform Operator during each quarter of the Reportable Period.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--  -->
+	<!--Tevékenységek száma (összetett) / Number of Activities (Complex)-->
+	<xsd:complexType name="NumberOfActivities_Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Ez az elem négy részelemből áll, melyek a negyedéveket jelzik.</xsd:documentation>
+			<xsd:documentation xml:lang="en">The Number of Activities element is further split into four elements, representing the quarters within a year.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="NumbQ1" type="xsd:integer"/>
+			<xsd:element name="NumbQ2" type="xsd:integer"/>
+			<xsd:element name="NumbQ3" type="xsd:integer"/>
+			<xsd:element name="NumbQ4" type="xsd:integer"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--  -->
+	<!--Taxes Type (Complex)-->
+	<xsd:complexType name="TaxesType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">Ez az elem négy részelemből áll, melyek a negyedéveket jelzik.
+			Minden negyedévet jelző elemhez egy MonAmnt_Type elem tartozik, amely az összeg feltüntetésére szolgál. Az összeget egészszámként kell megadni, tizedesjegyek nélkül. Az összeg pénznemét currCode attribútumban kell megadni, és formátuma a 4217 ISO-kódot követi.</xsd:documentation>
+			<xsd:documentation xml:lang="en">The Taxes element is further split into four elements, representing the quarters of the year.
+			Each quarter element is further comprised of the MonAmnt_Type, used to communicate the amount. Such amounts shall be given in full units, i.e. without decimals. The code for the currency, in which the value is expressed has to be taken from the ISO code list 4217 and added in attribute currCode.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="TaxQ1" type="dpi:MonAmnt_Type"/>
+			<xsd:element name="TaxQ2" type="dpi:MonAmnt_Type"/>
+			<xsd:element name="TaxQ3" type="dpi:MonAmnt_Type"/>
+			<xsd:element name="TaxQ4" type="dpi:MonAmnt_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--  -->
+	<!--Fees Type (Complex) -->
+	<xsd:complexType name="FeesType">
+		<xsd:sequence>
+			<xsd:annotation>
+				<xsd:documentation xml:lang="hu">Ez az elem négy részelemből áll, melyek a negyedéveket jelzik.
+				Minden negyedévet jelző elemhez egy MonAmnt_Type elem tartozik, amely az összeg feltüntetésére szolgál. Az összeget egészszámként kell megadni, tizedesjegyek nélkül. Az összeg pénznemét currCode attribútumban kell megadni, és formátuma a 4217 ISO-kódot követi.</xsd:documentation>
+				<xsd:documentation xml:lang="en">The Fees element is further split into four elements, representing the quarters of the year.
+				Each quarter element is further comprised of the MonAmnt_Type, used to communicate the amount. Such amounts shall be given in full units, i.e. without decimals. The code for the currency, in which the value is expressed has to be taken from the ISO code list 4217 and added in attribute currCode.</xsd:documentation>
+			</xsd:annotation>
+			<xsd:element name="FeesQ1" type="dpi:MonAmnt_Type"/>
+			<xsd:element name="FeesQ2" type="dpi:MonAmnt_Type"/>
+			<xsd:element name="FeesQ3" type="dpi:MonAmnt_Type"/>
+			<xsd:element name="FeesQ4" type="dpi:MonAmnt_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--  -->
+	<!--Ellenérték típus (összetett) / Consideration Type (Complex) -->
+	<xsd:complexType name="ConsiderationType">
+		<xsd:sequence>
+			<xsd:annotation>
+				<xsd:documentation xml:lang="hu">Ez az elem négy részelemből áll, melyek a negyedéveket jelzik.
+				Minden negyedévet jelző elemhez egy MonAmnt_Type elem tartozik, amely az összeg feltüntetésére szolgál. Az összeget egészszámként kell megadni, tizedesjegyek nélkül. Az összeg pénznemét currCode attribútumban kell megadni, és formátuma a 4217 ISO-kódot követi.</xsd:documentation>
+				<xsd:documentation xml:lang="en">The Consideration element is further split into four elements, representing the quarters of the year.
+				Each quarter element is further comprised of the MonAmnt_Type, used to communicate the amount. Such amounts shall be given in full units, i.e. without decimals. The code for the currency, in which the value is expressed has to be taken from the ISO code list 4217 and added in attribute currCode.</xsd:documentation>
+			</xsd:annotation>
+			<xsd:element name="ConsQ1" type="dpi:MonAmnt_Type"/>
+			<xsd:element name="ConsQ2" type="dpi:MonAmnt_Type"/>
+			<xsd:element name="ConsQ3" type="dpi:MonAmnt_Type"/>
+			<xsd:element name="ConsQ4" type="dpi:MonAmnt_Type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--  -->
+	<!--Property Listing Type (Complex) -->
+	<xsd:complexType name="PropertyListingType">
+		<xsd:sequence>
+			<xsd:element name="Address" type="dpi:Address_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az elem a címadatokat jelző Address elemnél leírt Address típust követi.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This element follows the Address Type as described under Address.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="LandRegistrationNumber" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az elem jelzi a közvetített ingatlan helyrajzi számát vagy annak az ingatlan helye szerinti tagállam nemzeti joga által megállapított megfelelőjét (pl. kataszterszám), ha rendelkezésre áll.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This element contains the land registration number or its equivalent (such as a cadastral number) under the national law of the Member State where it is located, where available.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Consideration" type="dpi:ConsiderationType">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem tartalmazza negyedéves bontásban az Adatszolgáltatási időszakban kifizetett vagy jóváírt Ellenérték összegét. Négy részelemből áll, melyek a negyedéveket jelzik.
+					Az ingatlan bérbeadás mint Érintett tevékenység esetében ezt az információt Közvetített ingatlanonként külön kell megadni.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory element contains the total Consideration paid or credited during each quarter of the Reportable Period. It is further split into four elements, representing the quarters of the year.
+					For Relevant Activities involving the rental of immovable property, the Consideration information must be provided separately with respect to each Property Listing.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="NumberOfActivities" type="dpi:NumberOfActivities_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem tartalmazza negyedéves bontásban azon Érintett tevékenységek számát, amelyek tekintetében az Ellenértéket kifizették vagy jóváírták az Adatszolgáltatási időszakban. Négy részelemből áll, melyek a negyedéveket jelzik.
+					Az ingatlan bérbeadás mint Érintett tevékenység esetében ezt az információt Közvetített ingatlanonként külön kell megadni.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory element contains the number of Relevant Activities in respect of which the Consideration was paid or credited during each quarter of the Reportable Period.It is further split into four elements, representing the four quarters of the year.
+					For Relevant Activities involving the rental of immovable property, the number of activities must be provided separately with respect to each Property Listing.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Fees" type="dpi:FeesType">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem tartalmazza negyedéves bontásban az Adatszolgáltatási időszakban az Adatszolgáltatásra kötelezett platformüzemeltető által levont vagy felszámított díjak, jutalékok összegét. Négy részelemből áll, melyek a negyedéveket jelzik.
+					Az ingatlan bérbeadás mint Érintett tevékenység esetében ezt az információt Közvetített ingatlanonként külön kell megadni.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory element contains any fees, commissions withheld or charged by the Reporting Platform Operator during each quarter of the Reportable Period. It is further split into four elements, representing the quarters of the year.
+					For Relevant Activities involving the rental of immovable property, the information on Fees must be provided separately with respect to each Property Listing.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Taxes" type="dpi:TaxesType">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem tartalmazza negyedéves bontásban az Adatszolgáltatási időszakban az Adatszolgáltatásra kötelezett platformüzemeltető által levont vagy felszámított adók összegét. Négy részelemből áll, melyek a negyedéveket jelzik.
+					Az ingatlan bérbeadás mint Érintett tevékenység esetében ezt az információt Közvetített ingatlanonként külön kell megadni.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory element contains any taxes withheld or charged by the Reporting Platform Operator during each quarter of the Reportable Period. It is further split into four elements, representing the quarters of the year.
+					For Relevant Activities involving the rental of immovable property, the information on Taxes must be provided separately with respect to each Property Listing.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PropertyType" type="dpi:DPIPropertyType_EnumType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az elem jelzi a Közvetített ingatlan típusát. Értéke DPI901-től DPI910-ig adható meg.</xsd:documentation>
+					<xsd:documentation xml:lang="en">The Property Type element specifies the type of property rented. DPI901 to DPI910.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="OtherPropertyType" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ebben az elemben kell megadni az ingatlan típusát, ha a Property Type elem értékeként az egyéb “DPI910” lett megadva. Ha a Property Type értéke ettől eltérő, akkor ez az elem nem adható meg.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This element describes the type of property in case “DPI910” is selected as Property Type. This element cannot be used in case another Property Type is selected.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RentedDays" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az elem jelzi a Közvetített ingatlan bérbeadással érintett napjainak számát.
+					A szám 1-től 9999-ig adható meg.</xsd:documentation>
+					<xsd:documentation xml:lang="en">The Rented Days element contains the number of days that the Property Listing was rented.
+					The number must be comprised between 1 and 9999, both included.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:totalDigits value="4"/>
+						<xsd:minInclusive value="1"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--  -->
+	<!--GVS típus (összetett) GVS Type (Complex) -->
+	<xsd:complexType name="GVSType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="hu">A GVS elem az Aktv. 5 melléklet II/B/3. pontjában említett azonosítási szolgáltatáson keresztül történő közvetlen megerősítés esetén használatos elem. Részelemei a NameGVS, JurisdictionGVS, ReferenceGVS és OtherTINGVS elemek, továbbá a FinancialIdentifier elem. A GVS elem használata nem megengedett, mivel jelenleg ilyen azonosítási szolgáltatáson keresztül történő közvetlen megerősítés az EU-ban nem alkalmazott.</xsd:documentation>
+			<xsd:documentation xml:lang="en">The GVS element reflects the Government Verification Service (GVS) due diligence procedures indicated in Section II/B/3. of Annex 5 of the Aktv. It is composed of the Name GVS, Jurisdiction GVS, Reference GVS and Other TIN GVS elements, as well as the Financial Identifier element. The GVS element shall not be used, as Government Verification System is currently not used within the EU.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="NameGVS" type="stf:StringMin1Max200_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az elem jelzi a GVS útján azonosított Jelentendő értékesítő nevét.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This element indicates the name of the Reportable Seller identified through GVS.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="JurisdictionGVS">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az elem jelzi a GVS útján azonosított Jelentendő értékesítő GVS-azonosítás szerinti joghatóságát.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This element indicates the jurisdiction whose Government Verification Service was relied upon in respect of the Reportable Seller.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="iso:CountryCode_Type"/>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="ReferenceGVS" type="stf:StringMin1Max200_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az elem jelzi az egyedi azonosítót, amelyet a GVS-azonosítás során a joghatóság kibocsájtott a Jelentendő értékesítő adatbázisban való azonosítása céljából.</xsd:documentation>
+					<xsd:documentation xml:lang="en">The Reference GVS element contains the unique reference number or code provided by the jurisdiction whose GVS was used, allowing that jurisdiction to identify the Reportable Seller within its database.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="OtherTINGVS" type="stf:StringMin1Max200_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az elem jelzi a Jelentendő értékesítő egyéb Adóazonosító számát és az azt kibocsájtó joghatóságot.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This element contains any TIN available to the Reporting Platform Operator, including the jurisdiction of issuance.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="FinancialIdentifier" type="dpi:FinancialIdentifier_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az elem tartalmazza a Pénzforgalmi jelzőszámot, amely az Ellenérték kifizetésére, illetve jóváírására szolgáló bankszámlának vagy egyéb hasonló pénzforgalmi számlának a Platformüzemeltető rendelkezésére álló egyedi azonosító száma vagy hivatkozási száma. Nem kell feltüntetni, ha a Jelentendő értékesítő az Aktv. 5. melléklet II/D. pont alapján meghatározott illetősége szerinti tagállam hatáskörrel rendelkező hatósága közzétette, hogy nem szándékozik a Pénzforgalmi jelzőszámot az Értékesítő azonosítása céljából felhasználni.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This element contains the Financial Account Identifier, which is the unique identifying number or reference available to the Platform Operator of the bank account or other similar payment services account to which the Consideration is paid or credited. It does not have to be reported if the competent authority of the Member State where the Reportable Seller is resident in the meaning of paragraph D of Section II of Annex 5 of the Aktv has not published that it does not intend to use the Financial Account Identifier for the identification of the Seller.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--  -->
+	<!-- Jelentendő értékesítő (összetett) / Reportable Seller (Complex)-->
+	<xsd:complexType name="ReportableSeller_Type">
+		<xsd:sequence>
+			<xsd:element name="Identity">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem az EntitySeller és IndividualSeller elemekből áll.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory element is further comprised of the EntitySeller and IndividualSeller elements.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:choice>
+						<xsd:element name="EntitySeller">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="hu">Az EntitySeller elem tartalmazza a Szervezet Értékesítő adatait és a Standard és GVS elemekből áll. A GVS elem használata nem megengedett, mivel jelenleg az Aktv. 5 melléklet II/B/3. pontjában említett azonosítási szolgáltatáson keresztül történő közvetlen megerősítés az EU-ban nem alkalmazott.</xsd:documentation>
+								<xsd:documentation xml:lang="en">The Entity Seller element indicates the data of a Seller which is an Entity. It is further comprised of the Standard and GVS elements, however the GVS element shall not be used, as Government Verification System indicated in Section II/B/3. of Annex 5 of the Aktv is currently not used within the EU.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:choice>
+									<xsd:element name="Standard">
+										<xsd:annotation>
+											<xsd:documentation xml:lang="hu">A Standard elem a főszabály szerinti átvilágítási eljárásra utal, és további elemei az EntSellerID (amely az OrganisationParty típust követi) és a FinancialIdentifier elem.</xsd:documentation>
+											<xsd:documentation xml:lang="en">The Standard element reflects the standard due diligence procedures and is further comprised of the EntSellerID (that follows the OrganisationParty Type) and FinancialIdentifier elements.</xsd:documentation>
+										</xsd:annotation>
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element name="EntSellerID" type="dpi:OrganisationParty_Type">
+													<xsd:annotation>
+														<xsd:documentation xml:lang="hu">Az EntSellerID elem a Szervezet Értékesítőt azonosítja és az OrganisationParty_Type típust követi.</xsd:documentation>
+														<xsd:documentation xml:lang="en">The EntSellerID element identifies the Entity Seller and follows the OrganisationParty_Type.</xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+												<xsd:element name="FinancialIdentifier" type="dpi:FinancialIdentifier_Type" minOccurs="0" maxOccurs="unbounded">
+													<xsd:annotation>
+														<xsd:documentation xml:lang="hu">Ez az elem tartalmazza a Pénzforgalmi jelzőszámot (ha az Adatszolgáltatásra kötelezett platformüzemeltető rendelkezésére áll), kivéve, ha a Jelentendő értékesítő illetősége szerinti tagállam hatáskörrel rendelkező hatósága közzétette, hogy nem szándékozik a Pénzforgalmi jelzőszámot erre a célra felhasználni.</xsd:documentation>
+														<xsd:documentation xml:lang="en">This element reflects the Financial Account Identifier,insofar as it is available to the Reporting Platform Operator and the competent authority of the Member State where the Reportable Seller is resident has not published that it does not intend to use the Financial Account Identifier for this purpose.</xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+												<xsd:element name="PermanentEstablishments" type="dpi:PermanentEstablishments_Type" minOccurs="0">
+													<xsd:annotation>
+														<xsd:documentation xml:lang="hu">Ez az elem jelezi az állandó telephelyet (ha van ilyen), amelyen keresztül a Szervezet Értékesítő az Európai Unióban az Érintett tevékenységeket végzi, továbbá tartalmazza az állandó telephely szerinti tagállamot.</xsd:documentation>
+														<xsd:documentation xml:lang="en">This data element provides information on any permanent establishment through which Relevant Activities are carried out by the Entity Seller in the European Union, and indicates each respective EU Member State where such a permanent establishment is located.</xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+											</xsd:sequence>
+										</xsd:complexType>
+									</xsd:element>
+									<xsd:element name="GVS" type="dpi:GVSType">
+										<xsd:annotation>
+											<xsd:documentation xml:lang="hu">A GVS elem használata nem megengedett, mivel jelenleg az Aktv. 5 melléklet II/B/3. pontjában említett azonosítási szolgáltatáson keresztül történő közvetlen megerősítés az EU-ban nem alkalmazott.</xsd:documentation>
+											<xsd:documentation xml:lang="en">The GVS element shall not be used, as Government Verification System indicated in Section II/B/3. of Annex 5 of the Aktv is currently not used within the EU.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+								</xsd:choice>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="IndividualSeller">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="hu">Az IndividualSeller elem tartalmazza a magánszemély Értékesítő adatait és a Standard és GVS elemekből áll. A GVS elem használata nem megengedett, mivel jelenleg az Aktv. 5 melléklet II/B/3. pontjában említett azonosítási szolgáltatáson keresztül történő közvetlen megerősítés az EU-ban nem alkalmazott.</xsd:documentation>
+								<xsd:documentation xml:lang="en">The IndividualSeller element indicates the data of a Seller who is an Individual. It is further comprised of the Standard and GVS elements, however the GVS element shall not be used, as Government Verification System indicated in Section II/B/3. of Annex 5 of the Aktv is currently not used within the EU.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:choice>
+									<xsd:element name="Standard">
+										<xsd:annotation>
+											<xsd:documentation xml:lang="hu">A Standard elem a főszabály szerinti átvilágítási eljárásra utal, és további elemei az IndSellerID (amely a PersonParty_Type típust követi) és a FinancialIdentifier elem.</xsd:documentation>
+											<xsd:documentation xml:lang="en">The Standard element reflects the standard due diligence procedures and is further comprised of the IndSellerID element (which follows the PersonParty Type) and the Financial Identifier element.</xsd:documentation>
+										</xsd:annotation>
+										<xsd:complexType>
+											<xsd:sequence>
+												<xsd:element name="IndSellerID" type="dpi:PersonParty_Type">
+													<xsd:annotation>
+														<xsd:documentation xml:lang="hu">Az IndSellerID elem a magánszemély Értékesítőt azonosítja és a PersonParty_Type típust követi.</xsd:documentation>
+														<xsd:documentation xml:lang="en">The IndSellerID element identifies the individual Seller and follows the PersonParty_Type</xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+												<xsd:element name="FinancialIdentifier" type="dpi:FinancialIdentifier_Type" minOccurs="0" maxOccurs="unbounded">
+													<xsd:annotation>
+														<xsd:documentation xml:lang="hu">Ez az elem tartalmazza a Pénzforgalmi jelzőszámot (ha az Adatszolgáltatásra kötelezett platformüzemeltető rendelkezésére áll), kivéve, ha a Jelentendő értékesítő illetősége szerinti tagállam hatáskörrel rendelkező hatósága közzétette, hogy nem szándékozik a Pénzforgalmi jelzőszámot erre a célra felhasználni.</xsd:documentation>
+														<xsd:documentation xml:lang="en">This element reflects the Financial Account Identifier,insofar as it is available to the Reporting Platform Operator and the competent authority of the Member State where the Reportable Seller is resident has not published that it does not intend to use the Financial Account Identifier for this purpose.</xsd:documentation>
+													</xsd:annotation>
+												</xsd:element>
+											</xsd:sequence>
+										</xsd:complexType>
+									</xsd:element>
+									<xsd:element name="GVS" type="dpi:GVSType">
+										<xsd:annotation>
+											<xsd:documentation xml:lang="hu">A GVS elem használata nem megengedett, mivel jelenleg az Aktv. 5 melléklet II/B/3. pontjában említett azonosítási szolgáltatáson keresztül történő közvetlen megerősítés az EU-ban nem alkalmazott.</xsd:documentation>
+											<xsd:documentation xml:lang="en">The GVS element shall not be used, as Government Verification System indicated in Section II/B/3. of Annex 5 of the Aktv is currently not used within the EU.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+								</xsd:choice>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="RelevantActivities">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem tartalmazza a Jelentendő értékesítők által végzett Érintett tevékenységekkel kapcsolatos információkat. Az elem további részelemei az Immovable Property, a Personal Services, a Sale of Goods és a Transportation Rental elemek, amelyek az Aktv. alapján jelentendő Érintett tevékenységek egyes fajtáit takarják. Legalább egy részelem megadása kötelező.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory element includes information on the Relevant Activities provided by Reportable Sellers. The element is comprised of the Immovable Property, Personal Services, Sale of Goods and Transportation Rental subelements, reflecting the type of relevant activities reportable under the Aktv. At least one subelement is required.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ImmovableProperty" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="hu">Az elem a Jelentendő értékesítő által végzett ingatlan bérbeadással kapcsolatos információk bejelentésére szolgál. Részeleme az ismételhető Property Listing elem.</xsd:documentation>
+								<xsd:documentation xml:lang="en">The Immovable Property element is for reporting information on the rental of immovable property by a Reportable Seller. It comprises the repeatable Property Listing element.</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="PropertyListing" type="dpi:PropertyListingType" maxOccurs="unbounded">
+										<xsd:annotation>
+											<xsd:documentation xml:lang="hu">A PropertyListing elem az Address, LandRegistrationNumber, Consideration, NumberOfActivities, Fees, Taxes, PropertyType és RentedDays elemekből épül fel.</xsd:documentation>
+											<xsd:documentation xml:lang="en">The Property Listing element is comprised of the Address, Land Registration Number, Consideration, Number of Activities, Fees, Taxes, Property Type and Rented days elements.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="PersonalServices" type="dpi:OtherActivities_Type" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="hu">Az elem a Jelentendő értékesítő által végzett Személyi szolgáltatással kapcsolatos információk bejelentésére szolgál. Személyi szolgáltatás az önállóan vagy valamely Szervezet nevében eljáró egy vagy több személy által végzett, idő- vagy feladatalapú munka, amelyet valamely felhasználó kérésére végeznek el online, vagy - miután a Platformon keresztül lehetővé tették - személyesen.</xsd:documentation>
+								<xsd:documentation xml:lang="en">The Personal Services element is for reporting information on Personal Services provided by a Reportable Seller. Personal Service means a service involving time- or task-based work performed by one or more individuals, acting either independently or on behalf of an Entity, and which is carried out at the request of a user, either online or physically offline after having been facilitated via a Platform.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="SaleOfGoods" type="dpi:OtherActivities_Type" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="hu">Az elem a Jelentendő értékesítő által végzett Áruk értékesítésével kapcsolatos információk bejelentésére szolgál.</xsd:documentation>
+								<xsd:documentation xml:lang="en">The sale of Goods element is for reporting information on the sale of Goods by a Reportable Seller.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="TransportationRental" type="dpi:OtherActivities_Type" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation xml:lang="hu">Az elem a Jelentendő értékesítő által végzett közlekedési eszköz bérbeadásával kapcsolatos információk bejelentésére szolgál.</xsd:documentation>
+								<xsd:documentation xml:lang="en">The Transportation Rental element is for reporting information on the rental of any mode of transport by a Reportable Seller.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--  -->
+	<!-- Állandó telephelyek (összetett) / Permanent Establishments (Complex)-->
+	<xsd:complexType name="PermanentEstablishments_Type">
+		<xsd:sequence>
+			<xsd:annotation>
+				<xsd:documentation xml:lang="hu">Ez az elem jelzi a Szervezetnek minősülő Értékesítő azon állandó telephelyét és a telephely szerinti tagállamot, amelyen keresztül az EU-ban az Érintett tevékenységeket végzi, ha van ilyen. Mivel több ilyen telephely is lehet, ezért az ezen belül található cím elem ismételhető.</xsd:documentation>
+				<xsd:documentation xml:lang="en">This element identifies the permanent establishment through which Relevant Activities are carried out by the Entity Seller in the Union, and the EU Member State it is located in. As there may be multiple permanent establishments, the Address subelement is repeatable.</xsd:documentation>
+			</xsd:annotation>
+			<xsd:element name="Address" type="dpi:Address_Type" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem tartalmazza az állandó telephely címét, és a telephely szerinti tagállam országkódját.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory data element should contain the address of the permanent establishment, including the country code of the EU Member State it is located in.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- -->
+	<!-- Egyéb platformüzemeltetők (összetett) / Other Platform Operators (Complex)-->
+	<xsd:complexType name="OtherPlatformOperators_Type">
+		<xsd:sequence>
+			<xsd:element name="AssumingPlatformOperator" type="dpi:CorrectableOtherRPO_Type" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ebben az elemben adható meg, hogy melyik az a másik Platformüzemeltető, amely az Adatszolgáltatásra kötelezett platformüzemeltető helyett jelentette be az információt.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This element provides information about the Platform Operator assuming the reporting instead of the Reporting Platform Operator.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="OtherRPO_Type">
+		<xsd:sequence>
+			<xsd:annotation>
+				<xsd:documentation xml:lang="hu">Ez az elem tartalmazza az Adatszolgáltatásra kötelezett platformüzemeltető helyett információt bejelentő Platformüzemeltető azonosításához szükséges információkat.</xsd:documentation>
+				<xsd:documentation xml:lang="en">This element contains information necessary for the identification of the Platform Operator assuming the reporting of the information instead of the Reporting Platform Operator.</xsd:documentation>
+			</xsd:annotation>
+			<xsd:element name="ResCountryCode" type="iso:CountryCode_Type" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az ismételhető elem jelzi az Adatszolgáltatásra kötelezett platformüzemeltető helyett jelentő másik Platformüzemeltető illetőség szerinti tagállamának/tagállamainak országkódját. Az illetőség szerinti tagállamként az adóügyi illetőség szerinti tagállamot kell feltüntetni, illetve annak hiányában a bejegyzés helye szerinti, az üzletvezetésének helye (ideértve a tényleges üzletvezetés helyét) szerinti, vagy az állandó telephelye szerinti tagállamot.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This repeatable data element describes the residence country code(s) of the Platform Operator assuming the reporting. The residence country code of this Platform Operator should correspond to the Member State where the Platform Operator is resident for tax purposes or, where it does not have a residence for tax purposes, either the Member State it is incorporated under or the Member State that it has its place of management (including effective management) in, or the Member State where it has a permanent establishment in.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TIN" type="dpi:TIN_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem jelzi a más Platformüzemeltető illetősége szerinti tagállam által kibocsájtott Adóazonosító számot. Ha a Szervezet nem rendelkezik Adóazonosító számmal, vagy az nem ismert, az unknown attribútumot igazként kell jelölni. Ha több TIN érték kerül megadásra, az unknown attribútum nem használható.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This data element provides the tax identification number (TIN) issued by the Member State of residence of the entity. In case the entity does not have a TIN, or the TIN is not known, the unknown attribute must be set to “true”. In case more than one TIN are provided, any provided element cannot be flagged as “unknown”.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Name" type="dpi:NameOrganisation_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem tartalmazza a más Platformüzemeltető cégnevét.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory element should contain the legal name of the assuming Platform Operator.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Address" type="dpi:Address_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem tartalmazza a más Platformüzemeltető címét, beleértve a cím országkódját.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory data element should contain the address of the entity, including the country code of the address.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- -->
+	<!-- Helyesbíthető Egyéb platformüzemeltetők (összetett) / Correctable Other Platform Operator (Complex)-->
+	<xsd:complexType name="CorrectableOtherRPO_Type">
+		<xsd:complexContent>
+			<xsd:extension base="dpi:OtherRPO_Type">
+				<xsd:sequence>
+					<xsd:element name="DocSpec" type="stf:DocSpec_Type">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="hu">A DocSpec kötelező elem azonosítja a küldött DPI üzeneten belüli egyes helyesbíthető adatokat, és azok jellegét (új, helyesbítés, törlés).</xsd:documentation>
+							<xsd:documentation xml:lang="en">DocSpec mandatory element identifies the particular correctable report within the DPI message being transmitted and its nature (new, correction, deletion).</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!--DPI Body típus - DPI adatszolgáltatás / DPI Body Type - DPI Reporting  -->
+	<xsd:complexType name="DPIBody_Type">
+		<xsd:sequence>
+			<xsd:annotation>
+				<xsd:documentation xml:lang="hu">A DPI Body elem az Adatszolgáltatásra kötelezett platformüzemeltetőre, valamint a Jelentendő értékesítők által végzett Érintett tevékenységekre vonatkozó információkat tartalmazza. Ha az Adatszolgáltatásra kötelezett platformüzemeltető mentesül a Jelentendő értékesítőkkel és Érintett tevékenységekkel kapcsolatos információk bejelentése alól, mivel ugyanazon információkat egy másik Adatszolgáltatásra kötelezett platformüzemeltető már bejelentette, a Body elem ezt az információt is tartalmazhatja.</xsd:documentation>
+				<xsd:documentation xml:lang="en">The DPI Body element contains the information on the Reporting Platform Operator, as well as on the Relevant Activities performed by Reportable Sellers. If the Reporting Platform Operator is exempt from reporting the information on Reportable Sellers and their Relevant Activities, because the same information has been reported by another Reporting Platform Operator, this can also be indicated in the Body element.</xsd:documentation>
+			</xsd:annotation>
+			<xsd:element name="PlatformOperator" type="dpi:CorrectablePlatformOperator_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez a kötelező elem az Adatszolgáltatásra kötelezett platformüzemeltetőt azonosítja, és az Organisation Party típust követi (lásd OrganisationParty_Type).</xsd:documentation>
+					<xsd:documentation xml:lang="en">This mandatory element identifies the Reporting Platform Operator and follows the Organisation Party type (see OrganisationParty_Type).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="OtherPlatformOperators" type="dpi:OtherPlatformOperators_Type" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Az Aktv. 5. melléklet III/A/1-2. pontok második mondata alapján az Adatszolgáltatásra kötelezett platformüzemeltető mentesül az információ bejelentésének kötelezettsége alól, ha bizonyítja, hogy ugyanazon információt egy másik Adatszolgáltatásra kötelezett platformüzemeltető már bejelentette. A bizonyítás egyik opcionális lépése ennek az elemnek a kitöltése lehet. Ebben az elemben adható meg, hogy melyik az a másik Platformüzemeltető, amely helyette jelentette be az információt.</xsd:documentation>
+					<xsd:documentation xml:lang="en">Based on the second sentence of Section III/A/1 and 2 of Annex 5 of the Aktv, the Reporting Platform Operator shall be exempt from reporting the information if it has proof, that the same information has been reported by another Reporting Platform Operator. An optional step for proving this may be by providing this element. This other Platform Operators element identifies the Platform Operator assuming the reporting instead of the Reporting Platform Operator.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ReportableSeller" type="dpi:CorrectableReportableSeller_Type" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">Ez az elem tartalmazza a Jelentendő értékesítők azonosításával kapcsolatos információkat, valamint az általuk végzett Érintett tevékenységekkel kapcsolatos információkat. Ha a MessageTypeIndic értéke "DPI401", akkor kötelező elem, ha értéke "DPI403", ami nullás adatszolgáltatást jelez, akkor ez az elem nem használható.</xsd:documentation>
+					<xsd:documentation xml:lang="en">This element contains the identification information on each Reportable Seller, as well as information on the Relevant Activities provided by such Reportable Seller. When the MessageTypeIndic is set to “DPI401”, this element is mandatory. When it is set to “DPI403” indicating nul reporting, no Reportable Seller must be provided.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--  -->
+	<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Séma elem / Schema  element ++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- DPI-fájl üzenetstruktúra / DPI File Message structure  -->
+	<!-- -->
+	<!--DPI üzenet sturktúrája / DPI Message structure  -->
+	<xsd:element name="DPI_HU">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="MessageSpec" type="dpi:MessageSpec_Type">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="hu">Az üzenet fejlécében feltüntetett információk azonosítják az adatszolgáltatót, jelzik az üzenet létrehozásának időpontját, az érintett adatszolgáltatási időszakot, és az adatszolgáltatás jellegét (eredeti adatszolgáltatás, helyesbítés, nullás). Itt szerepel az üzenet egyedi azonosító száma is.</xsd:documentation>
+						<xsd:documentation xml:lang="en">Information in the message header identifies the reporting entity that is sending the message, it specifies when the message was created, what period the report is for, and the nature of the report (original, corrected, null). It also contains the unique identifier of the message.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="DPIBody" type="dpi:DPIBody_Type">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="hu">A DPI Body elem az Adatszolgáltatásra kötelezett platformüzemeltetőre, valamint a Jelentendő értékesítők által végzett Érintett tevékenységekre vonatkozó információkat tartalmazza. Ha az Adatszolgáltatásra kötelezett platformüzemeltető mentesül a Jelentendő értékesítőkkel és Érintett tevékenységekkel kapcsolatos információk bejelentése alól, mivel ugyanazon információkat egy másik Adatszolgáltatásra kötelezett platformüzemeltető már bejelentette, a Body elem ezt az információt is tartalmazhatja.</xsd:documentation>
+						<xsd:documentation xml:lang="en">The DPI Body element contains the information on the Reporting Platform Operator, as well as on the Relevant Activities performed by Reportable Sellers. If the Reporting Platform Operator is exempt from reporting the information on Reportable Sellers and their Relevant Activities, because the same information has been reported by another Reporting Platform Operator, this can also be indicated in the Body element.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="version" type="stf:StringMin1Max10_Type">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="hu">DPI verzió.</xsd:documentation>
+					<xsd:documentation xml:lang="en">The DPI Version.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<!--  -->
+</xsd:schema>
