@@ -19,7 +19,7 @@
 	<!-- Minimum 1 maximum 170 hosszúságú karakterláncot definiál / Defines a string with minimum length 1 and maximum length of 170 -->
 	<xsd:simpleType name="StringMin1Max170_Type">
 		<xsd:annotation>
-			<xsd:documentation xml:lang="en">Minimum 1 maximum 170 hosszúságú karakterláncot definiál.</xsd:documentation>
+			<xsd:documentation xml:lang="hu">Minimum 1 maximum 170 hosszúságú karakterláncot definiál.</xsd:documentation>
 			<xsd:documentation xml:lang="en">Defines a string with minimum length 1 and maximum length of 170.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -184,7 +184,7 @@
 			</xsd:enumeration>
 			<xsd:enumeration value="OECD205">
 				<xsd:annotation>
-					<xsd:documentation xml:lang="en">ez alatt a név alatt is ismert</xsd:documentation>
+					<xsd:documentation xml:lang="hu">ez alatt a név alatt is ismert</xsd:documentation>
 					<xsd:documentation xml:lang="en">aka (also known as)</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
