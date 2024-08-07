@@ -28,4 +28,4 @@ Bővebb információ itt található:
 A program felületén már előre meg vannak adva a input adatok kivéve az XML elérési útját. Ezek az adatok azonban tetszőlegesen módosíthatók.
 Az XSD validáció parancssorból is meghívható az alábbiak szerint, amennyiben az állományokat a c:\DAC7validator mappába csomagolta ki
 
-**c:\DAC7validator\OnlineInvoiceTool_v1.1.exe -xmlvalidate -xmlfile=C:\Temp\dac7\hibas.xml -xsdfile=DPIXML_20231019.xsd*
+**c:\DAC7validator\OnlineInvoiceTool_v1.1.exe -xmlvalidate -xmlfile=C:\Temp\dac7\hibas.xml -xsdfile=DPIXML_20231019.xsd**
