@@ -4,9 +4,9 @@ A DAC7Validátor egy C#-ban készült keret program, amely segítségével a fel
 
 # Funkcionalitás
 - XSD validáció az alábbi XSD-re:
--- DPIXML_20231019.xsd
-import  oecddpitypes_v1.0.xsd
-import isodpitypes_v1.0.xsd
+-- DPIXML_20231019.xsd <br />
+import  oecddpitypes_v1.0.xsd <br />
+import isodpitypes_v1.0.xsd <br />
 - Logolás állományba
 
 ## Futtatás ,Telepítés
