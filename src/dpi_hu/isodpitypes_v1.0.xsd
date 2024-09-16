@@ -17,7 +17,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="AX">
 				<xsd:annotation>
-					<xsd:documentation>ALAND ISLANDS=Aland szigetek</xsd:documentation>
+					<xsd:documentation>ALAND ISLANDS=Aland</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="AL">
@@ -112,7 +112,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="BY">
 				<xsd:annotation>
-					<xsd:documentation>BELARUS=Belarusz</xsd:documentation>
+					<xsd:documentation>BELARUS=Fehéroroszország</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="BE">
@@ -142,7 +142,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="BO">
 				<xsd:annotation>
-					<xsd:documentation>BOLIVIA, PLURINATIONAL STATE OF=Többnemzetiségű Bolíviai Állam</xsd:documentation>
+					<xsd:documentation>BOLIVIA, PLURINATIONAL STATE OF=Bolívia</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="BQ">
@@ -172,12 +172,12 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="IO">
 				<xsd:annotation>
-					<xsd:documentation>BRITISH INDIAN OCEAN TERRITORY=Brit Indiai-óceáni Terület</xsd:documentation>
+					<xsd:documentation>BRITISH INDIAN OCEAN TERRITORY=Brit Indiai-óceáni terület</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="BN">
 				<xsd:annotation>
-					<xsd:documentation>BRUNEI DARUSSALAM=Brunei Darussalam Állam</xsd:documentation>
+					<xsd:documentation>BRUNEI DARUSSALAM=Brunei</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="BG">
@@ -247,7 +247,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="CC">
 				<xsd:annotation>
-					<xsd:documentation>COCOS (KEELING) ISLANDS=Kókusz-szigetek (vagy Keeling-szigetek)</xsd:documentation>
+					<xsd:documentation>COCOS (KEELING) ISLANDS=Kókusz (Keeling)-szigetek</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="CO">
@@ -262,7 +262,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="CG">
 				<xsd:annotation>
-					<xsd:documentation>CONGO=Kongó</xsd:documentation>
+					<xsd:documentation>CONGO=Kongói Köztársaság</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="CD">
@@ -322,7 +322,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="DM">
 				<xsd:annotation>
-					<xsd:documentation>DOMINICA=Dominika</xsd:documentation>
+					<xsd:documentation>DOMINICA=Dominikai Közösség</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="DO">
@@ -367,17 +367,17 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="FK">
 				<xsd:annotation>
-					<xsd:documentation>FALKLAND ISLANDS (MALVINAS)=Falkland-szigetek</xsd:documentation>
+					<xsd:documentation>FALKLAND ISLANDS (MALVINAS)=Falkland-szigetek (Malvinas)</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="FO">
 				<xsd:annotation>
-					<xsd:documentation>FAROE ISLANDS=Feröer szigetek</xsd:documentation>
+					<xsd:documentation>FAROE ISLANDS=Feröer</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="FJ">
 				<xsd:annotation>
-					<xsd:documentation>FIJI=Fidzsi-szigetek</xsd:documentation>
+					<xsd:documentation>FIJI=Fidzsi</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="FI">
@@ -402,7 +402,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="TF">
 				<xsd:annotation>
-					<xsd:documentation>FRENCH SOUTHERN TERRITORIES=Francia Déli Területek</xsd:documentation>
+					<xsd:documentation>FRENCH SOUTHERN TERRITORIES=Francia déli területek</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="GA">
@@ -417,7 +417,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="GE">
 				<xsd:annotation>
-					<xsd:documentation>GEORGIA=Georgia</xsd:documentation>
+					<xsd:documentation>GEORGIA=Grúzia</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="DE">
@@ -497,7 +497,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="VA">
 				<xsd:annotation>
-					<xsd:documentation>HOLY SEE (VATICAN CITY STATE)=Apostoli Szentszék (Vatikánvárosi Állam)</xsd:documentation>
+					<xsd:documentation>HOLY SEE (VATICAN CITY STATE)=Apostoli Szentszék (Vatikán)</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="HN">
@@ -532,7 +532,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="IR">
 				<xsd:annotation>
-					<xsd:documentation>IRAN, ISLAMIC REPUBLIC OF=Iráni Iszlám Köztársaság</xsd:documentation>
+					<xsd:documentation>IRAN, ISLAMIC REPUBLIC OF=Irán</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="IQ">
@@ -547,7 +547,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="IM">
 				<xsd:annotation>
-					<xsd:documentation>ISLE OF MAN=Man-sziget</xsd:documentation>
+					<xsd:documentation>ISLE OF MAN=Man</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="IL">
@@ -612,12 +612,12 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="KG">
 				<xsd:annotation>
-					<xsd:documentation>KYRGYZSTAN=Kirgiz Köztársaság</xsd:documentation>
+					<xsd:documentation>KYRGYZSTAN=Kirgizisztán</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="LA">
 				<xsd:annotation>
-					<xsd:documentation>LAO PEOPLE'S DEMOCRATIC REPUBLIC=Laoszi Népi Demokratikus Köztársaság</xsd:documentation>
+					<xsd:documentation>LAO PEOPLE'S DEMOCRATIC REPUBLIC=Laosz</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="LV">
@@ -732,7 +732,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="FM">
 				<xsd:annotation>
-					<xsd:documentation>MICRONESIA, FEDERATED STATES OF=Mikronéziai Szövetségi Államok</xsd:documentation>
+					<xsd:documentation>MICRONESIA, FEDERATED STATES OF=Mikronézia</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="MD">
@@ -857,7 +857,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="PS">
 				<xsd:annotation>
-					<xsd:documentation>PALESTINE, STATE OF=Palesztina</xsd:documentation>
+					<xsd:documentation>PALESTINE, STATE OF=Palesztin Nemzeti Hatóság</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="PA">
@@ -922,7 +922,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="RU">
 				<xsd:annotation>
-					<xsd:documentation>RUSSIAN FEDERATION=Orosz Föderáció</xsd:documentation>
+					<xsd:documentation>RUSSIAN FEDERATION=Oroszország</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="RW">
@@ -932,12 +932,12 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="BL">
 				<xsd:annotation>
-					<xsd:documentation>SAINT BARTHELEMY=Saint-Barthélémy</xsd:documentation>
+					<xsd:documentation>SAINT BARTHELEMY=Saint-Barthélemy</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="SH">
 				<xsd:annotation>
-					<xsd:documentation>SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA=Szent Ilona, Ascension-sziget, Tristan da Cunha</xsd:documentation>
+					<xsd:documentation>SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA=Szent Ilona</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="KN">
@@ -952,7 +952,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="MF">
 				<xsd:annotation>
-					<xsd:documentation>SAINT MARTIN (FRENCH PART)=Szent Márton-sziget (francia rész)</xsd:documentation>
+					<xsd:documentation>SAINT MARTIN (FRENCH PART)=Saint-Martin</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="PM">
@@ -992,7 +992,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="RS">
 				<xsd:annotation>
-					<xsd:documentation>SERBIA=Szerb Köztársaság</xsd:documentation>
+					<xsd:documentation>SERBIA=Szerbia</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="SC">
@@ -1012,7 +1012,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="SX">
 				<xsd:annotation>
-					<xsd:documentation>SINT MAARTEN (DUTCH PART)=Saint-Martin (holland rész)</xsd:documentation>
+					<xsd:documentation>SINT MAARTEN (DUTCH PART)=Sint Maarten</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="SK">
@@ -1042,7 +1042,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="GS">
 				<xsd:annotation>
-					<xsd:documentation>SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS=Dél-Georgia és Déli-Sandwich-szigetek</xsd:documentation>
+					<xsd:documentation>SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS=Déli-Georgia és Déli-Sandwich-szigetek</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="SS">
@@ -1072,7 +1072,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="SJ">
 				<xsd:annotation>
-					<xsd:documentation>SVALBARD AND JAN MAYEN=Svalbard és Jan Mayen</xsd:documentation>
+					<xsd:documentation>SVALBARD AND JAN MAYEN=Svalbard</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="SZ">
@@ -1092,7 +1092,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="SY">
 				<xsd:annotation>
-					<xsd:documentation>SYRIAN ARAB REPUBLIC=Szíriai Arab Köztársaság</xsd:documentation>
+					<xsd:documentation>SYRIAN ARAB REPUBLIC=Szíria</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="TW">
@@ -1107,7 +1107,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="TZ">
 				<xsd:annotation>
-					<xsd:documentation>TANZANIA, UNITED REPUBLIC OF=Tanzániai Egyesült Köztársaság</xsd:documentation>
+					<xsd:documentation>TANZANIA, UNITED REPUBLIC OF=Tanzánia</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="TH">
@@ -1182,17 +1182,17 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="GB">
 				<xsd:annotation>
-					<xsd:documentation>UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND=Nagy-Britannia és Észak-Írország Egyesült Királysága</xsd:documentation>
+					<xsd:documentation>UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND=Nagy-Britannia</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="US">
 				<xsd:annotation>
-					<xsd:documentation>UNITED STATES=Amerikai Egyesült Államok</xsd:documentation>
+					<xsd:documentation>UNITED STATES=Egyesült Államok</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="UM">
 				<xsd:annotation>
-					<xsd:documentation>UNITED STATES MINOR OUTLYING ISLANDS=Az Amerikai Egyesült Államok Külső Szigetei</xsd:documentation>
+					<xsd:documentation>UNITED STATES MINOR OUTLYING ISLANDS=Amerikai Csendes-óceáni-szigetek</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="UY">
@@ -1212,7 +1212,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="VE">
 				<xsd:annotation>
-					<xsd:documentation>VENEZUELA, BOLIVARIAN REPUBLIC OF=Venezuelai Bolivári Köztársaság</xsd:documentation>
+					<xsd:documentation>VENEZUELA, BOLIVARIAN REPUBLIC OF=Venezuela</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="VN">
@@ -1232,7 +1232,7 @@ A DPI séma az ISO országkód szabványt használja és az ISO 3166-1 listán a
 			</xsd:enumeration>
 			<xsd:enumeration value="WF">
 				<xsd:annotation>
-					<xsd:documentation>WALLIS AND FUTUNA=Wallis- és Futuna-szigetek</xsd:documentation>
+					<xsd:documentation>WALLIS AND FUTUNA=Wallis és Futuna</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="EH">
